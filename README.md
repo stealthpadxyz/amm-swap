@@ -1,4 +1,4 @@
-# Stealth Pad
+# Stealth Pad Swap
 
 ## Development
 
