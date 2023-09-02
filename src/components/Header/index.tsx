@@ -29,7 +29,7 @@ import {
 
 // import { YellowCard } from '../Card'
 // import { Moon, Sun } from 'react-feather'
-// import Menu from '../Menu'
+import Menu from '../Menu'
 
 import Row, { RowFixed } from '../Row'
 import Web3Status from '../Web3Status'
@@ -107,10 +107,10 @@ const HeaderElement = styled.div`
   `};
 `
 
-// const HeaderElementWrap = styled.div`
-//   display: flex;
-//   align-items: center;
-// `
+const HeaderElementWrap = styled.div`
+  display: flex;
+  align-items: center;
+`
 
 const HeaderRow = styled(RowFixed)`
   ${({ theme }) => theme.mediaWidth.upToMedium`
@@ -425,12 +425,12 @@ export default function Header() {
             <Web3Status />
           </AccountElement>
         </HeaderElement>
-        {/* <HeaderElementWrap>
-          <StyledMenuButton onClick={() => toggleDarkMode()}>
+        <HeaderElementWrap>
+          {/* <StyledMenuButton onClick={() => toggleDarkMode()}>
             {darkMode ? <Moon size={20} /> : <Sun size={20} />}
-          </StyledMenuButton>
+          </StyledMenuButton> */}
           <Menu />
-        </HeaderElementWrap> */}
+        </HeaderElementWrap>
       </HeaderControls>
     </HeaderFrame>
   )

@@ -104,7 +104,8 @@ export function CurrencySearch({
   }, [allTokens, debouncedQuery])
 
   const sortedTokens: Token[] = useMemo(() => {
-    return filteredTokens.sort(tokenComparator)
+    return filteredTokens
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filteredTokens, tokenComparator])
 
   const filteredSortedTokens = useSortedTokensByQuery(sortedTokens, debouncedQuery)
