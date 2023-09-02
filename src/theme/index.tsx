@@ -12,7 +12,7 @@ import { Colors } from './styled'
 
 export * from './components'
 
-const MEDIA_WIDTHS = {
+export const MEDIA_WIDTHS = {
   upToExtraSmall: 500,
   upToSmall: 720,
   upToMedium: 960,
@@ -48,6 +48,7 @@ export function colors(darkMode: boolean): Colors {
     text5: darkMode ? '#2C2F36' : '#EDEEF2',
 
     // backgrounds / greys
+    bg0: darkMode ? '#191B1F' : '#FFF',
     bg1: darkMode ? '#262626' : '#FFFFFF',
     // bg2: darkMode ? '#2C2F36' : '#F7F8FA',
     bg2: darkMode ? '#171717' : '#F7F8FA',

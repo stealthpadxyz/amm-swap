@@ -1,7 +1,8 @@
-import {
-  ChainId
-  // , TokenAmount
-} from '@uniswap/sdk'
+/* eslint-disable @typescript-eslint/no-unused-vars */
+// import {
+//   ChainId
+//   , TokenAmount
+// } from '@uniswap/sdk'
 import React, { useState } from 'react'
 import { Text } from 'rebass'
 import { NavLink } from 'react-router-dom'
@@ -26,7 +27,7 @@ import {
   // , ExternalLink
 } from '../../theme'
 
-import { YellowCard } from '../Card'
+// import { YellowCard } from '../Card'
 // import { Moon, Sun } from 'react-feather'
 // import Menu from '../Menu'
 
@@ -39,6 +40,7 @@ import { useUserHasSubmittedClaim } from '../../state/transactions/hooks'
 import { Dots } from '../swap/styleds'
 import Modal from '../Modal'
 import UniBalanceContent from './UniBalanceContent'
+import NetworkSelector from './NetworkSelector'
 // import usePrevious from '../../hooks/usePrevious'
 
 const HeaderFrame = styled.div`
@@ -163,24 +165,24 @@ const UNIWrapper = styled.span`
   }
 `
 
-const HideSmall = styled.span`
-  ${({ theme }) => theme.mediaWidth.upToSmall`
-    display: none;
-  `};
-`
+// const HideSmall = styled.span`
+//   ${({ theme }) => theme.mediaWidth.upToSmall`
+//     display: none;
+//   `};
+// `
 
-const NetworkCard = styled(YellowCard)`
-  border-radius: 12px;
-  padding: 8px 12px;
-  ${({ theme }) => theme.mediaWidth.upToSmall`
-    margin: 0;
-    margin-right: 0.5rem;
-    width: initial;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    flex-shrink: 1;
-  `};
-`
+// const NetworkCard = styled(YellowCard)`
+//   border-radius: 12px;
+//   padding: 8px 12px;
+//   ${({ theme }) => theme.mediaWidth.upToSmall`
+//     margin: 0;
+//     margin-right: 0.5rem;
+//     width: initial;
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+//     flex-shrink: 1;
+//   `};
+// `
 
 const BalanceText = styled(Text)`
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
@@ -298,15 +300,15 @@ export const StyledMenuButton = styled.button`
   }
 `
 
-const NETWORK_LABELS: { [chainId in ChainId]?: string } = {
-  [ChainId.RINKEBY]: 'Rinkeby',
-  [ChainId.ROPSTEN]: 'Ropsten',
-  [ChainId.GÖRLI]: 'Görli',
-  [ChainId.KOVAN]: 'Kovan'
-}
+// const NETWORK_LABELS: { [chainId in ChainId]?: string } = {
+//   [ChainId.RINKEBY]: 'Rinkeby',
+//   [ChainId.ROPSTEN]: 'Ropsten',
+//   [ChainId.GÖRLI]: 'Görli',
+//   [ChainId.KOVAN]: 'Kovan'
+// }
 
 export default function Header() {
-  const { account, chainId } = useActiveWeb3React()
+  const { account } = useActiveWeb3React()
   const { t } = useTranslation()
 
   const userEthBalance = useETHBalances(account ? [account] : [])?.[account ?? '']
@@ -370,11 +372,14 @@ export default function Header() {
       </HeaderRow>
       <HeaderControls>
         <HeaderElement>
-          <HideSmall>
+          <NetworkSelector />
+        </HeaderElement>
+        <HeaderElement>
+          {/* <HideSmall>
             {chainId && NETWORK_LABELS[chainId] && (
               <NetworkCard title={NETWORK_LABELS[chainId]}>{NETWORK_LABELS[chainId]}</NetworkCard>
             )}
-          </HideSmall>
+          </HideSmall> */}
           {availableClaim && !showClaimPopup && (
             <UNIWrapper onClick={toggleClaimModal}>
               <UNIAmount active={!!account && !availableClaim} style={{ pointerEvents: 'auto' }}>

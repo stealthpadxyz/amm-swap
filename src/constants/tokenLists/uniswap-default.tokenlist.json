@@ -468,6 +468,14 @@
         "symbol": "ZRX",
         "decimals": 18,
         "logoURI": "https://ethereum-optimism.github.io/data/ZRX/logo.png"
+      },
+      {
+        "chainId": 1,
+        "address": "0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf",
+        "name": "StealthPad",
+        "symbol": "STEALTH",
+        "decimals": 18,
+        "logoURI": "https://stealthpad.xyz/assets/logo-9143866f.gif"
       }
     ]
   }
