@@ -49,7 +49,7 @@ const FlyoutMenu = styled.div`
   }
   @media screen and (min-width: ${MEDIA_WIDTHS.upToSmall}px) {
     top: 50px;
-    bottom: 0;
+    bottom: unset;
   }
 `
 const FlyoutRow = styled.div<{ active: boolean }>`
