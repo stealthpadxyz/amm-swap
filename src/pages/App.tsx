@@ -27,9 +27,12 @@ import PoolFinder from './PoolFinder'
 import RemoveLiquidity from './RemoveLiquidity'
 import { RedirectOldRemoveLiquidityPathStructure } from './RemoveLiquidity/redirects'
 import Swap from './Swap'
+import Uniswap from './Uniswap'
 import { OpenClaimAddressModalAndRedirectToSwap, RedirectPathToSwapOnly, RedirectToSwap } from './Swap/redirects'
 import Vote from './Vote'
 import VotePage from './Vote/VotePage'
+import { useActiveWeb3React } from 'hooks'
+import { ChainId } from '@uniswap/stealthpad-sdk'
 
 const AppWrapper = styled.div`
   display: flex;
@@ -74,6 +77,7 @@ function TopLevelModals() {
 }
 
 export default function App() {
+  const { chainId } = useActiveWeb3React()
   return (
     <Suspense fallback={null}>
       <Route component={GoogleAnalyticsReporter} />
@@ -90,6 +94,7 @@ export default function App() {
           <Web3ReactManager>
             <Switch>
               <Route exact strict path="/swap" component={Swap} />
+              {chainId === ChainId.MAINNET && <Route exact strict path="/uniswap" component={Uniswap} />}
               <Route exact strict path="/claim" component={OpenClaimAddressModalAndRedirectToSwap} />
               <Route exact strict path="/swap/:outputCurrency" component={RedirectToSwap} />
               <Route exact strict path="/send" component={RedirectPathToSwapOnly} />

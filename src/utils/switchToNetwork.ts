@@ -1,7 +1,7 @@
 import { BigNumber } from '@ethersproject/bignumber'
 import { hexStripZeros } from '@ethersproject/bytes'
 import { Web3Provider } from '@ethersproject/providers'
-import { ChainId } from '@uniswap/sdk'
+import { ChainId } from '@uniswap/stealthpad-sdk'
 import { CHAIN_INFO } from 'constants/chainInfo'
 
 interface SwitchNetworkArguments {

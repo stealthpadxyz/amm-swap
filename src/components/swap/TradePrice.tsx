@@ -1,5 +1,5 @@
 import React from 'react'
-import { Price } from '@uniswap/sdk'
+import { Price } from '@uniswap/stealthpad-sdk'
 import { useContext } from 'react'
 import { Repeat } from 'react-feather'
 import { Text } from 'rebass'

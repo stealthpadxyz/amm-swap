@@ -1,5 +1,5 @@
 import { isTradeBetter } from 'utils/trades'
-import { Currency, CurrencyAmount, Pair, Token, Trade } from '@uniswap/sdk'
+import { Currency, CurrencyAmount, Pair, Token, Trade } from '@uniswap/stealthpad-sdk'
 import flatMap from 'lodash.flatmap'
 import { useMemo } from 'react'
 
@@ -16,7 +16,7 @@ import { useActiveWeb3React } from './index'
 import { useUnsupportedTokens } from './Tokens'
 import { useUserSingleHopOnly } from 'state/user/hooks'
 
-function useAllCommonPairs(currencyA?: Currency, currencyB?: Currency): Pair[] {
+function useAllCommonPairs(currencyA?: Currency, currencyB?: Currency, isUniswap = false): Pair[] {
   const { chainId } = useActiveWeb3React()
 
   const [tokenA, tokenB] = chainId
@@ -71,7 +71,7 @@ function useAllCommonPairs(currencyA?: Currency, currencyB?: Currency): Pair[] {
     [tokenA, tokenB, bases, basePairs, chainId]
   )
 
-  const allPairs = usePairs(allPairCombinations)
+  const allPairs = usePairs(allPairCombinations, isUniswap)
 
   // only pass along valid pairs, non-duplicated pairs
   return useMemo(
@@ -95,8 +95,12 @@ const MAX_HOPS = 3
 /**
  * Returns the best trade for the exact amount of tokens in to the given token out
  */
-export function useTradeExactIn(currencyAmountIn?: CurrencyAmount, currencyOut?: Currency): Trade | null {
-  const allowedPairs = useAllCommonPairs(currencyAmountIn?.currency, currencyOut)
+export function useTradeExactIn(
+  currencyAmountIn?: CurrencyAmount,
+  currencyOut?: Currency,
+  isUniswap = false
+): Trade | null {
+  const allowedPairs = useAllCommonPairs(currencyAmountIn?.currency, currencyOut, isUniswap)
 
   const [singleHopOnly] = useUserSingleHopOnly()
 
@@ -129,8 +133,12 @@ export function useTradeExactIn(currencyAmountIn?: CurrencyAmount, currencyOut?:
 /**
  * Returns the best trade for the token in to the exact amount of token out
  */
-export function useTradeExactOut(currencyIn?: Currency, currencyAmountOut?: CurrencyAmount): Trade | null {
-  const allowedPairs = useAllCommonPairs(currencyIn, currencyAmountOut?.currency)
+export function useTradeExactOut(
+  currencyIn?: Currency,
+  currencyAmountOut?: CurrencyAmount,
+  isUniswap = false
+): Trade | null {
+  const allowedPairs = useAllCommonPairs(currencyIn, currencyAmountOut?.currency, isUniswap)
 
   const [singleHopOnly] = useUserSingleHopOnly()
 

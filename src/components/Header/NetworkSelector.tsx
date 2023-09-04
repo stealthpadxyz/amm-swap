@@ -12,9 +12,8 @@ import { ApplicationModal, addPopup } from 'state/application/actions'
 import { useActiveWeb3React } from 'hooks'
 import { switchToNetwork } from 'utils/switchToNetwork'
 import { useAppDispatch } from 'state/hooks'
-import { ChainId } from '@uniswap/sdk'
+import { ChainId } from '@uniswap/stealthpad-sdk'
 import { useWeb3React } from '@web3-react/core'
-import stealthLogo from '../../assets/svg/logo.png'
 
 const ActiveRowWrapper = styled.div`
   background-color: ${({ theme }) => theme.bg1};
@@ -47,7 +46,7 @@ const FlyoutMenu = styled.div`
   & > *:not(:last-child) {
     margin-bottom: 12px;
   }
-  @media screen and (min-width: ${MEDIA_WIDTHS.upToSmall}px) {
+  @media screen and (min-width: ${MEDIA_WIDTHS.upToMedium}px) {
     top: 50px;
     bottom: unset;
   }
@@ -81,6 +80,7 @@ const NetworkLabel = styled.div`
 `
 const SelectorLabel = styled(NetworkLabel)`
   display: none;
+  white-space: nowrap;
   @media screen and (min-width: ${MEDIA_WIDTHS.upToSmall}px) {
     display: block;
     margin-right: 8px;
@@ -176,10 +176,7 @@ export default function NetworkSelector() {
           <FlyoutHeader>Select a network</FlyoutHeader>
           <Row onSelectChain={handleRowClick} targetChain={ChainId.MAINNET} />
           <Row onSelectChain={handleRowClick} targetChain={ChainId.BASE} />
-          <FlyoutRow active={false}>
-            <Logo src={stealthLogo} />
-            <NetworkLabel>StealthChain</NetworkLabel>
-          </FlyoutRow>
+          <Row onSelectChain={handleRowClick} targetChain={ChainId.STEALTHGOERLI} />
         </FlyoutMenu>
       )}
     </SelectorWrapper>

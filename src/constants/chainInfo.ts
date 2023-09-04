@@ -1,6 +1,7 @@
-import { ChainId } from '@uniswap/sdk'
+import { ChainId } from '@uniswap/stealthpad-sdk'
 import ethereumLogoUrl from 'assets/images/ethereum-logo.png'
 import baseLogoUrl from 'assets/images/base-logo.svg'
+import stealthLogo from 'assets/svg/logo.png'
 
 const INFURA_KEY = process.env.REACT_APP_INFURA_KEY
 if (typeof INFURA_KEY === 'undefined') {
@@ -16,7 +17,8 @@ export const INFURA_NETWORK_URLS: { [key in ChainId]: string } = {
   [ChainId.ROPSTEN]: `https://ropsten.infura.io/v3/${INFURA_KEY}`,
   [ChainId.GÖRLI]: `https://goerli.infura.io/v3/${INFURA_KEY}`,
   [ChainId.KOVAN]: `https://kovan.infura.io/v3/${INFURA_KEY}`,
-  [ChainId.BASE]: `https://base.blockpi.network/v1/rpc/public`
+  [ChainId.BASE]: `https://base.blockpi.network/v1/rpc/public`,
+  [ChainId.STEALTHGOERLI]: `https://test-rpc.stealthchain.org/`
 }
 
 /**
@@ -110,6 +112,17 @@ export const CHAIN_INFO: ChainInfoMap = {
     addNetworkInfo: {
       nativeCurrency: { name: 'Ether', symbol: 'ETH', decimals: 18 },
       rpcUrl: INFURA_NETWORK_URLS[ChainId.BASE]
+    }
+  },
+  [ChainId.STEALTHGOERLI]: {
+    docs: 'https://docs.uniswap.org/',
+    explorer: 'https://test.stealthscan.xyz/',
+    infoLink: 'https://info.uniswap.org/#/',
+    label: 'Stealth Goerli',
+    logoUrl: stealthLogo,
+    addNetworkInfo: {
+      nativeCurrency: { name: 'Ether', symbol: 'ETH', decimals: 18 },
+      rpcUrl: INFURA_NETWORK_URLS[ChainId.STEALTHGOERLI]
     }
   }
 }

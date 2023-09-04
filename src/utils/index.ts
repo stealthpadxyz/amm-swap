@@ -4,8 +4,8 @@ import { AddressZero } from '@ethersproject/constants'
 import { JsonRpcSigner, Web3Provider } from '@ethersproject/providers'
 import { BigNumber } from '@ethersproject/bignumber'
 import { abi as IUniswapV2Router02ABI } from '@uniswap/v2-periphery/build/IUniswapV2Router02.json'
-import { ROUTER_ADDRESS } from '../constants'
-import { ChainId, JSBI, Percent, Token, CurrencyAmount, Currency, ETHER } from '@uniswap/sdk'
+import { ROUTER_ADDRESS, UNISWAP_ROUTER_ADDRESS } from '../constants'
+import { ChainId, JSBI, Percent, Token, CurrencyAmount, Currency, ETHER } from '@uniswap/stealthpad-sdk'
 import { TokenAddressMap } from '../state/lists/hooks'
 
 // returns the checksummed address if the address is valid, otherwise returns false
@@ -23,7 +23,8 @@ const ETHERSCAN_PREFIXES: { [chainId in ChainId]: string } = {
   4: 'rinkeby.',
   5: 'goerli.',
   42: 'kovan.',
-  8453: ''
+  8453: '',
+  44474478: ''
 }
 
 export function getEtherscanLink(
@@ -34,6 +35,8 @@ export function getEtherscanLink(
   const prefix =
     chainId === 8453
       ? `https://basescan.org`
+      : chainId === 44474478
+      ? `https://test.stealthscan.xyz/`
       : `https://${ETHERSCAN_PREFIXES[chainId] || ETHERSCAN_PREFIXES[8453]}etherscan.io`
 
   switch (type) {
@@ -102,8 +105,18 @@ export function getContract(address: string, ABI: any, library: Web3Provider, ac
 }
 
 // account is optional
-export function getRouterContract(_: ChainId | undefined, library: Web3Provider, account?: string): Contract {
-  return getContract(ROUTER_ADDRESS[_ ?? ChainId.BASE], IUniswapV2Router02ABI, library, account)
+export function getRouterContract(
+  _: ChainId | undefined,
+  library: Web3Provider,
+  account?: string,
+  isUniswap = false
+): Contract {
+  return getContract(
+    isUniswap ? UNISWAP_ROUTER_ADDRESS[_ ?? ChainId.BASE] : ROUTER_ADDRESS[_ ?? ChainId.BASE],
+    IUniswapV2Router02ABI,
+    library,
+    account
+  )
 }
 
 export function escapeRegExp(string: string): string {

@@ -1,5 +1,5 @@
 import { createAction } from '@reduxjs/toolkit'
-import { ChainId } from '@uniswap/sdk'
+import { ChainId } from '@uniswap/stealthpad-sdk'
 import { TokenList } from '@uniswap/token-lists'
 
 export type PopupContent =
