@@ -1,4 +1,4 @@
-# Puppy Frontend
+# Stealth Swap Frontend
 
 This project contains the main features of the Puppy application.
 
