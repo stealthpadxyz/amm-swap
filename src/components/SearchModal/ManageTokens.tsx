@@ -1,20 +1,18 @@
-import React, { useRef, RefObject, useCallback, useState, useMemo } from 'react'
-import Column from 'components/Column'
-import { PaddedColumn, Separator, SearchInput } from './styleds'
-import Row, { RowBetween, RowFixed } from 'components/Row'
-import { TYPE, ExternalLinkIcon, TrashIcon, ButtonText, ExternalLink } from 'theme'
-import { useToken } from 'hooks/Tokens'
+import { useRef, RefObject, useCallback, useState, useMemo } from 'react'
+import { Token } from '@pancakeswap/sdk'
+import { Text, Button, CloseIcon, IconButton, LinkExternal, Input, Link } from '@pancakeswap/uikit'
 import styled from 'styled-components'
-import { useUserAddedTokens, useRemoveUserAddedToken } from 'state/user/hooks'
-import { Token } from '@uniswap/stealthpad-sdk'
-import CurrencyLogo from 'components/CurrencyLogo'
-import { getEtherscanLink, isAddress } from 'utils'
-import { useActiveWeb3React } from 'hooks'
-import Card from 'components/Card'
+import Row, { RowBetween, RowFixed } from 'components/Layout/Row'
+import { useToken } from 'hooks/Tokens'
+import { useRemoveUserAddedToken } from 'state/user/hooks'
+import useUserAddedTokens from 'state/user/hooks/useUserAddedTokens'
+import { CurrencyLogo } from 'components/Logo'
+import { getBscScanLink, isAddress } from 'utils'
+import useActiveWeb3React from 'hooks/useActiveWeb3React'
+import { useTranslation } from 'contexts/Localization'
+import Column, { AutoColumn } from '../Layout/Column'
 import ImportRow from './ImportRow'
-import useTheme from '../../hooks/useTheme'
-
-import { CurrencyModalView } from './CurrencySearchModal'
+import { CurrencyModalView } from './types'
 
 const Wrapper = styled.div`
   width: 100%;
@@ -27,45 +25,42 @@ const Footer = styled.div`
   position: absolute;
   bottom: 0;
   width: 100%;
-  border-radius: 20px;
-  border-top-right-radius: 0;
-  border-top-left-radius: 0;
-  border-top: 1px solid ${({ theme }) => theme.bg3};
-  padding: 20px;
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `
 
 export default function ManageTokens({
   setModalView,
-  setImportToken
+  setImportToken,
 }: {
   setModalView: (view: CurrencyModalView) => void
   setImportToken: (token: Token) => void
 }) {
   const { chainId } = useActiveWeb3React()
 
+  const { t } = useTranslation()
+
   const [searchQuery, setSearchQuery] = useState<string>('')
-  const theme = useTheme()
 
   // manage focus on modal show
   const inputRef = useRef<HTMLInputElement>()
-  const handleInput = useCallback(event => {
+  const handleInput = useCallback((event) => {
     const input = event.target.value
     const checksummedInput = isAddress(input)
     setSearchQuery(checksummedInput || input)
   }, [])
 
   // if they input an address, use it
-  const isAddressSearch = isAddress(searchQuery)
   const searchToken = useToken(searchQuery)
 
-  // all tokens for local lisr
+  // all tokens for local list
   const userAddedTokens: Token[] = useUserAddedTokens()
   const removeToken = useRemoveUserAddedToken()
 
   const handleRemoveAll = useCallback(() => {
     if (chainId && userAddedTokens) {
-      userAddedTokens.map(token => {
+      userAddedTokens.forEach((token) => {
         return removeToken(chainId, token.address)
       })
     }
@@ -74,70 +69,65 @@ export default function ManageTokens({
   const tokenList = useMemo(() => {
     return (
       chainId &&
-      userAddedTokens.map(token => (
+      userAddedTokens.map((token) => (
         <RowBetween key={token.address} width="100%">
           <RowFixed>
-            <CurrencyLogo currency={token} size={'20px'} />
-            <ExternalLink href={getEtherscanLink(chainId, token.address, 'address')}>
-              <TYPE.main ml={'10px'} fontWeight={600}>
-                {token.symbol}
-              </TYPE.main>
-            </ExternalLink>
+            <CurrencyLogo currency={token} size="20px" />
+            <Link external href={getBscScanLink(token.address, 'address', chainId)} color="textSubtle" ml="10px">
+              {token.symbol}
+            </Link>
           </RowFixed>
           <RowFixed>
-            <TrashIcon onClick={() => removeToken(chainId, token.address)} />
-            <ExternalLinkIcon href={getEtherscanLink(chainId, token.address, 'address')} />
+            <IconButton variant="text" onClick={() => removeToken(chainId, token.address)}>
+              <CloseIcon />
+            </IconButton>
+            <LinkExternal href={getBscScanLink(token.address, 'address', chainId)} />
           </RowFixed>
         </RowBetween>
       ))
     )
   }, [userAddedTokens, chainId, removeToken])
 
+  const isAddressValid = searchQuery === '' || isAddress(searchQuery)
+
   return (
     <Wrapper>
       <Column style={{ width: '100%', flex: '1 1' }}>
-        <PaddedColumn gap="14px">
+        <AutoColumn gap="14px">
           <Row>
-            <SearchInput
-              type="text"
+            <Input
               id="token-search-input"
-              placeholder={'0x0000'}
+              scale="lg"
+              placeholder="0x0000"
               value={searchQuery}
               autoComplete="off"
               ref={inputRef as RefObject<HTMLInputElement>}
               onChange={handleInput}
+              isWarning={!isAddressValid}
             />
           </Row>
-          {searchQuery !== '' && !isAddressSearch && <TYPE.error error={true}>Enter valid token address</TYPE.error>}
+          {!isAddressValid && <Text color="failure">{t('Enter valid token address')}</Text>}
           {searchToken && (
-            <Card backgroundColor={theme.bg2} padding="10px 0">
-              <ImportRow
-                token={searchToken}
-                showImportView={() => setModalView(CurrencyModalView.importToken)}
-                setImportToken={setImportToken}
-                style={{ height: 'fit-content' }}
-              />
-            </Card>
+            <ImportRow
+              token={searchToken}
+              showImportView={() => setModalView(CurrencyModalView.importToken)}
+              setImportToken={setImportToken}
+              style={{ height: 'fit-content' }}
+            />
           )}
-        </PaddedColumn>
-        <Separator />
-        <PaddedColumn gap="lg">
-          <RowBetween>
-            <TYPE.main fontWeight={600}>
-              {userAddedTokens?.length} Custom {userAddedTokens.length === 1 ? 'Token' : 'Tokens'}
-            </TYPE.main>
-            {userAddedTokens.length > 0 && (
-              <ButtonText onClick={handleRemoveAll}>
-                <TYPE.blue>Clear all</TYPE.blue>
-              </ButtonText>
-            )}
-          </RowBetween>
-          {tokenList}
-        </PaddedColumn>
+        </AutoColumn>
+        {tokenList}
+        <Footer>
+          <Text bold color="textSubtle">
+            {userAddedTokens?.length} {userAddedTokens.length === 1 ? t('Custom Token') : t('Custom Tokens')}
+          </Text>
+          {userAddedTokens.length > 0 && (
+            <Button variant="tertiary" onClick={handleRemoveAll}>
+              {t('Clear all')}
+            </Button>
+          )}
+        </Footer>
       </Column>
-      <Footer>
-        <TYPE.darkGray>Tip: Custom tokens are stored locally in your browser</TYPE.darkGray>
-      </Footer>
     </Wrapper>
   )
 }

@@ -1,87 +1,36 @@
-import React, { memo, useCallback, useMemo, useRef, useState, useEffect } from 'react'
-import { Settings, CheckCircle } from 'react-feather'
-import ReactGA from 'react-ga'
-import { usePopper } from 'react-popper'
-import { useDispatch, useSelector } from 'react-redux'
+import { memo, useCallback, useMemo, useState, useEffect } from 'react'
+import { Button, Text, CheckmarkIcon, CogIcon, Input, Toggle, LinkExternal, useTooltip } from '@pancakeswap/uikit'
+import { useSelector } from 'react-redux'
 import styled from 'styled-components'
-import { useFetchListCallback } from '../../hooks/useFetchListCallback'
-import { useOnClickOutside } from '../../hooks/useOnClickOutside'
-import { TokenList } from '@uniswap/token-lists'
+import { TokenList, Version } from '@uniswap/token-lists'
+import Card from 'components/Card'
+import { UNSUPPORTED_LIST_URLS } from 'config/constants/lists'
+import { useTranslation } from 'contexts/Localization'
+import useFetchListCallback from '../../hooks/useFetchListCallback'
 
-import useToggle from '../../hooks/useToggle'
-import { AppDispatch, AppState } from '../../state'
+import { AppState, useAppDispatch } from '../../state'
 import { acceptListUpdate, removeList, disableList, enableList } from '../../state/lists/actions'
 import { useIsListActive, useAllLists, useActiveListUrls } from '../../state/lists/hooks'
-import { ExternalLink, LinkStyledButton, TYPE, IconWrapper } from '../../theme'
-import listVersionLabel from '../../utils/listVersionLabel'
-import { parseENSAddress } from '../../utils/parseENSAddress'
 import uriToHttp from '../../utils/uriToHttp'
-import { ButtonEmpty, ButtonPrimary } from '../Button'
 
-import Column, { AutoColumn } from '../Column'
-import ListLogo from '../ListLogo'
-import Row, { RowFixed, RowBetween } from '../Row'
-import { PaddedColumn, SearchInput, Separator, SeparatorDark } from './styleds'
-import { useListColor } from 'hooks/useColor'
-import useTheme from '../../hooks/useTheme'
-import ListToggle from '../Toggle/ListToggle'
-import Card from 'components/Card'
-import { CurrencyModalView } from './CurrencySearchModal'
-import { UNSUPPORTED_LIST_URLS } from 'constants/lists'
+import Column, { AutoColumn } from '../Layout/Column'
+import { ListLogo } from '../Logo'
+import Row, { RowFixed, RowBetween } from '../Layout/Row'
+import { CurrencyModalView } from './types'
+
+function listVersionLabel(version: Version): string {
+  return `v${version.major}.${version.minor}.${version.patch}`
+}
 
 const Wrapper = styled(Column)`
   width: 100%;
   height: 100%;
 `
 
-const UnpaddedLinkStyledButton = styled(LinkStyledButton)`
-  padding: 0;
-  font-size: 1rem;
-  opacity: ${({ disabled }) => (disabled ? '0.4' : '1')};
-`
-
-const PopoverContainer = styled.div<{ show: boolean }>`
-  z-index: 100;
-  visibility: ${props => (props.show ? 'visible' : 'hidden')};
-  opacity: ${props => (props.show ? 1 : 0)};
-  transition: visibility 150ms linear, opacity 150ms linear;
-  background: ${({ theme }) => theme.bg2};
-  border: 1px solid ${({ theme }) => theme.bg3};
-  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.01), 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.04),
-    0px 24px 32px rgba(0, 0, 0, 0.01);
-  color: ${({ theme }) => theme.text2};
-  border-radius: 0.5rem;
-  padding: 1rem;
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-gap: 8px;
-  font-size: 1rem;
-  text-align: left;
-`
-
-const StyledMenu = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  border: none;
-`
-
-const StyledTitleText = styled.div<{ active: boolean }>`
-  font-size: 16px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  font-weight: 600;
-  color: ${({ theme, active }) => (active ? theme.white : theme.text2)};
-`
-
-const StyledListUrlText = styled(TYPE.main)<{ active: boolean }>`
-  font-size: 12px;
-  color: ${({ theme, active }) => (active ? theme.white : theme.text2)};
-`
-
-const RowWrapper = styled(Row)<{ bgColor: string; active: boolean }>`
-  background-color: ${({ bgColor, active, theme }) => (active ? bgColor ?? 'transparent' : theme.bg2)};
+const RowWrapper = styled(Row)<{ active: boolean }>`
+  background-color: ${({ active, theme }) => (active ? `${theme.colors.success}19` : 'transparent')};
+  border: solid 1px;
+  border-color: ${({ active, theme }) => (active ? theme.colors.success : theme.colors.tertiary)};
   transition: 200ms;
   align-items: center;
   padding: 1rem;
@@ -93,75 +42,57 @@ function listUrlRowHTMLId(listUrl: string) {
 }
 
 const ListRow = memo(function ListRow({ listUrl }: { listUrl: string }) {
-  const listsByUrl = useSelector<AppState, AppState['lists']['byUrl']>(state => state.lists.byUrl)
-  const dispatch = useDispatch<AppDispatch>()
+  const listsByUrl = useSelector<AppState, AppState['lists']['byUrl']>((state) => state.lists.byUrl)
+  const dispatch = useAppDispatch()
   const { current: list, pendingUpdate: pending } = listsByUrl[listUrl]
 
-  const theme = useTheme()
-  const listColor = useListColor(list?.logoURI)
   const isActive = useIsListActive(listUrl)
 
-  const [open, toggle] = useToggle(false)
-  const node = useRef<HTMLDivElement>()
-  const [referenceElement, setReferenceElement] = useState<HTMLDivElement>()
-  const [popperElement, setPopperElement] = useState<HTMLDivElement>()
-
-  const { styles, attributes } = usePopper(referenceElement, popperElement, {
-    placement: 'auto',
-    strategy: 'fixed',
-    modifiers: [{ name: 'offset', options: { offset: [8, 8] } }]
-  })
-
-  useOnClickOutside(node, open ? toggle : undefined)
+  const { t } = useTranslation()
 
   const handleAcceptListUpdate = useCallback(() => {
     if (!pending) return
-    ReactGA.event({
-      category: 'Lists',
-      action: 'Update List from List Select',
-      label: listUrl
-    })
     dispatch(acceptListUpdate(listUrl))
   }, [dispatch, listUrl, pending])
 
   const handleRemoveList = useCallback(() => {
-    ReactGA.event({
-      category: 'Lists',
-      action: 'Start Remove List',
-      label: listUrl
-    })
-    if (window.prompt(`Please confirm you would like to remove this list by typing REMOVE`) === `REMOVE`) {
-      ReactGA.event({
-        category: 'Lists',
-        action: 'Confirm Remove List',
-        label: listUrl
-      })
+    // eslint-disable-next-line no-alert
+    if (window.confirm('Please confirm you would like to remove this list')) {
       dispatch(removeList(listUrl))
     }
   }, [dispatch, listUrl])
 
   const handleEnableList = useCallback(() => {
-    ReactGA.event({
-      category: 'Lists',
-      action: 'Enable List',
-      label: listUrl
-    })
     dispatch(enableList(listUrl))
   }, [dispatch, listUrl])
 
   const handleDisableList = useCallback(() => {
-    ReactGA.event({
-      category: 'Lists',
-      action: 'Disable List',
-      label: listUrl
-    })
     dispatch(disableList(listUrl))
   }, [dispatch, listUrl])
+
+  const { targetRef, tooltip, tooltipVisible } = useTooltip(
+    <div>
+      <Text>{list && listVersionLabel(list.version)}</Text>
+      <LinkExternal external href={`https://tokenlists.org/token-list?url=${listUrl}`}>
+        {t('See')}
+      </LinkExternal>
+      <Button variant="danger" scale="xs" onClick={handleRemoveList} disabled={Object.keys(listsByUrl).length === 1}>
+        {t('Remove')}
+      </Button>
+      {pending && (
+        <Button variant="text" onClick={handleAcceptListUpdate} style={{ fontSize: '12px' }}>
+          {t('Update list')}
+        </Button>
+      )}
+    </div>,
+    { placement: 'right-end', trigger: 'click' },
+  )
 
   if (!list) return null
 
   return (
-    <RowWrapper active={isActive} bgColor={listColor} key={listUrl} id={listUrlRowHTMLId(listUrl)}>
+    <RowWrapper active={isActive} key={listUrl} id={listUrlRowHTMLId(listUrl)}>
+      {tooltipVisible && tooltip}
       {list.logoURI ? (
         <ListLogo size="40px" style={{ marginRight: '1rem' }} logoURI={list.logoURI} alt={`${list.name} list logo`} />
       ) : (
@@ -169,37 +100,25 @@ const ListRow = memo(function ListRow({ listUrl }: { listUrl: string }) {
       )}
       <Column style={{ flex: '1' }}>
         <Row>
-          <StyledTitleText active={isActive}>{list.name}</StyledTitleText>
+          <Text bold>{list.name}</Text>
         </Row>
         <RowFixed mt="4px">
-          <StyledListUrlText active={isActive} mr="6px">
-            {list.tokens.length} tokens
-          </StyledListUrlText>
-          <StyledMenu ref={node as any}>
-            <ButtonEmpty onClick={toggle} ref={setReferenceElement} padding="0">
-              <Settings stroke={isActive ? theme.bg1 : theme.text1} size={12} />
-            </ButtonEmpty>
-            {open && (
-              <PopoverContainer show={true} ref={setPopperElement as any} style={styles.popper} {...attributes.popper}>
-                <div>{list && listVersionLabel(list.version)}</div>
-                <SeparatorDark />
-                <ExternalLink href={`https://tokenlists.org/token-list?url=${listUrl}`}>View list</ExternalLink>
-                <UnpaddedLinkStyledButton onClick={handleRemoveList} disabled={Object.keys(listsByUrl).length === 1}>
-                  Remove list
-                </UnpaddedLinkStyledButton>
-                {pending && (
-                  <UnpaddedLinkStyledButton onClick={handleAcceptListUpdate}>Update list</UnpaddedLinkStyledButton>
-                )}
-              </PopoverContainer>
-            )}
-          </StyledMenu>
+          <Text fontSize="12px" mr="6px" textTransform="lowercase">
+            {list.tokens.length} {t('Tokens')}
+          </Text>
+          <span ref={targetRef}>
+            <CogIcon color="text" width="12px" />
+          </span>
         </RowFixed>
       </Column>
-      <ListToggle
-        isActive={isActive}
-        bgColor={listColor}
-        toggle={() => {
-          isActive ? handleDisableList() : handleEnableList()
+      <Toggle
+        checked={isActive}
+        onChange={() => {
+          if (isActive) {
+            handleDisableList()
+          } else {
+            handleEnableList()
+          }
         }}
       />
     </RowWrapper>
@@ -207,24 +126,23 @@ const ListRow = memo(function ListRow({ listUrl }: { listUrl: string }) {
 })
 
 const ListContainer = styled.div`
-  padding: 1rem;
+  padding: 1rem 0;
   height: 100%;
   overflow: auto;
-  padding-bottom: 80px;
 `
 
-export function ManageLists({
+function ManageLists({
   setModalView,
   setImportList,
-  setListUrl
+  setListUrl,
 }: {
   setModalView: (view: CurrencyModalView) => void
   setImportList: (list: TokenList) => void
   setListUrl: (url: string) => void
 }) {
-  const theme = useTheme()
-
   const [listUrlInput, setListUrlInput] = useState<string>('')
+
+  const { t } = useTranslation()
 
   const lists = useAllLists()
 
@@ -237,22 +155,22 @@ export function ManageLists({
     }
   }, [activeCopy, activeListUrls])
 
-  const handleInput = useCallback(e => {
+  const handleInput = useCallback((e) => {
     setListUrlInput(e.target.value)
   }, [])
 
   const fetchList = useFetchListCallback()
 
   const validUrl: boolean = useMemo(() => {
-    return uriToHttp(listUrlInput).length > 0 || Boolean(parseENSAddress(listUrlInput))
+    return uriToHttp(listUrlInput).length > 0
   }, [listUrlInput])
 
   const sortedLists = useMemo(() => {
     const listUrls = Object.keys(lists)
     return listUrls
-      .filter(listUrl => {
+      .filter((listUrl) => {
         // only show loaded lists, hide unsupported lists
-        return Boolean(lists[listUrl].current) && !Boolean(UNSUPPORTED_LIST_URLS.includes(listUrl))
+        return Boolean(lists[listUrl].current) && !UNSUPPORTED_LIST_URLS.includes(listUrl)
       })
       .sort((u1, u2) => {
         const { current: l1 } = lists[u1]
@@ -267,6 +185,12 @@ export function ManageLists({
         }
 
         if (l1 && l2) {
+          // Always make StealthPad list in top.
+          const keyword = 'pancakeswap'
+          if (l1.name.toLowerCase().includes(keyword) || l2.name.toLowerCase().includes(keyword)) {
+            return -1
+          }
+
           return l1.name.toLowerCase() < l2.name.toLowerCase()
             ? -1
             : l1.name.toLowerCase() === l2.name.toLowerCase()
@@ -286,7 +210,7 @@ export function ManageLists({
   useEffect(() => {
     async function fetchTempList() {
       fetchList(listUrlInput, false)
-        .then(list => setTempList(list))
+        .then((list) => setTempList(list))
         .catch(() => setAddError('Error importing list'))
     }
     // if valid url, fetch details for card
@@ -294,7 +218,9 @@ export function ManageLists({
       fetchTempList()
     } else {
       setTempList(undefined)
-      listUrlInput !== '' && setAddError('Enter valid list location')
+      if (listUrlInput !== '') {
+        setAddError('Enter valid list location')
+      }
     }
 
     // reset error
@@ -316,58 +242,52 @@ export function ManageLists({
 
   return (
     <Wrapper>
-      <PaddedColumn gap="14px">
+      <AutoColumn gap="14px">
         <Row>
-          <SearchInput
-            type="text"
+          <Input
             id="list-add-input"
-            placeholder="https:// or ipfs:// or ENS name"
+            scale="lg"
+            placeholder={t('https:// or ipfs://')}
             value={listUrlInput}
             onChange={handleInput}
           />
         </Row>
         {addError ? (
-          <TYPE.error title={addError} style={{ textOverflow: 'ellipsis', overflow: 'hidden' }} error>
+          <Text color="failure" style={{ textOverflow: 'ellipsis', overflow: 'hidden' }}>
             {addError}
-          </TYPE.error>
+          </Text>
         ) : null}
-      </PaddedColumn>
+      </AutoColumn>
       {tempList && (
-        <PaddedColumn style={{ paddingTop: 0 }}>
-          <Card backgroundColor={theme.bg2} padding="12px 20px">
+        <AutoColumn style={{ paddingTop: 0 }}>
+          <Card padding="12px 20px">
             <RowBetween>
               <RowFixed>
                 {tempList.logoURI && <ListLogo logoURI={tempList.logoURI} size="40px" />}
                 <AutoColumn gap="4px" style={{ marginLeft: '20px' }}>
-                  <TYPE.body fontWeight={600}>{tempList.name}</TYPE.body>
-                  <TYPE.main fontSize={'12px'}>{tempList.tokens.length} tokens</TYPE.main>
+                  <Text bold>{tempList.name}</Text>
+                  <Text color="textSubtle" small textTransform="lowercase">
+                    {tempList.tokens.length} {t('Tokens')}
+                  </Text>
                 </AutoColumn>
               </RowFixed>
               {isImported ? (
                 <RowFixed>
-                  <IconWrapper stroke={theme.text2} size="16px" marginRight={'10px'}>
-                    <CheckCircle />
-                  </IconWrapper>
-                  <TYPE.body color={theme.text2}>Loaded</TYPE.body>
+                  <CheckmarkIcon width="16px" mr="10px" />
+                  <Text>{t('Loaded')}</Text>
                 </RowFixed>
               ) : (
-                <ButtonPrimary
-                  style={{ fontSize: '14px' }}
-                  padding="6px 8px"
-                  width="fit-content"
-                  onClick={handleImport}
-                >
-                  Import
-                </ButtonPrimary>
+                <Button width="fit-content" onClick={handleImport}>
+                  {t('Import')}
+                </Button>
               )}
             </RowBetween>
           </Card>
-        </PaddedColumn>
+        </AutoColumn>
       )}
-      <Separator />
       <ListContainer>
         <AutoColumn gap="md">
-          {sortedLists.map(listUrl => (
+          {sortedLists.map((listUrl) => (
             <ListRow key={listUrl} listUrl={listUrl} />
           ))}
         </AutoColumn>
@@ -375,3 +295,5 @@ export function ManageLists({
     </Wrapper>
   )
 }
+
+export default ManageLists

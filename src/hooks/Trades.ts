@@ -1,22 +1,23 @@
+/* eslint-disable no-param-reassign */
 import { isTradeBetter } from 'utils/trades'
-import { Currency, CurrencyAmount, Pair, Token, Trade } from '@uniswap/stealthpad-sdk'
-import flatMap from 'lodash.flatmap'
+import { Currency, CurrencyAmount, Pair, Token, Trade } from '@pancakeswap/sdk'
+import flatMap from 'lodash/flatMap'
 import { useMemo } from 'react'
+import useActiveWeb3React from 'hooks/useActiveWeb3React'
 
+import { useUserSingleHopOnly } from 'state/user/hooks'
 import {
   BASES_TO_CHECK_TRADES_AGAINST,
   CUSTOM_BASES,
   BETTER_TRADE_LESS_HOPS_THRESHOLD,
-  ADDITIONAL_BASES
-} from '../constants'
-import { PairState, usePairs } from '../data/Reserves'
+  ADDITIONAL_BASES,
+} from 'config/constants/exchange'
+import { PairState, usePairs } from './usePairs'
 import { wrappedCurrency } from '../utils/wrappedCurrency'
 
-import { useActiveWeb3React } from './index'
-import { useUnsupportedTokens } from './Tokens'
-import { useUserSingleHopOnly } from 'state/user/hooks'
+import { useUnsupportedTokens, useWarningTokens } from './Tokens'
 
-function useAllCommonPairs(currencyA?: Currency, currencyB?: Currency, isUniswap = false): Pair[] {
+export function useAllCommonPairs(currencyA?: Currency, currencyB?: Currency): Pair[] {
   const { chainId } = useActiveWeb3React()
 
   const [tokenA, tokenB] = chainId
@@ -34,8 +35,8 @@ function useAllCommonPairs(currencyA?: Currency, currencyB?: Currency, isUniswap
   }, [chainId, tokenA, tokenB])
 
   const basePairs: [Token, Token][] = useMemo(
-    () => flatMap(bases, (base): [Token, Token][] => bases.map(otherBase => [base, otherBase])),
-    [bases]
+    () => flatMap(bases, (base): [Token, Token][] => bases.map((otherBase) => [base, otherBase])),
+    [bases],
   )
 
   const allPairCombinations: [Token, Token][] = useMemo(
@@ -49,29 +50,29 @@ function useAllCommonPairs(currencyA?: Currency, currencyB?: Currency, isUniswap
             // token B against all bases
             ...bases.map((base): [Token, Token] => [tokenB, base]),
             // each base against all bases
-            ...basePairs
+            ...basePairs,
           ]
             .filter((tokens): tokens is [Token, Token] => Boolean(tokens[0] && tokens[1]))
             .filter(([t0, t1]) => t0.address !== t1.address)
-            .filter(([tokenA, tokenB]) => {
+            .filter(([tokenA_, tokenB_]) => {
               if (!chainId) return true
               const customBases = CUSTOM_BASES[chainId]
 
-              const customBasesA: Token[] | undefined = customBases?.[tokenA.address]
-              const customBasesB: Token[] | undefined = customBases?.[tokenB.address]
+              const customBasesA: Token[] | undefined = customBases?.[tokenA_.address]
+              const customBasesB: Token[] | undefined = customBases?.[tokenB_.address]
 
               if (!customBasesA && !customBasesB) return true
 
-              if (customBasesA && !customBasesA.find(base => tokenB.equals(base))) return false
-              if (customBasesB && !customBasesB.find(base => tokenA.equals(base))) return false
+              if (customBasesA && !customBasesA.find((base) => tokenB_.equals(base))) return false
+              if (customBasesB && !customBasesB.find((base) => tokenA_.equals(base))) return false
 
               return true
             })
         : [],
-    [tokenA, tokenB, bases, basePairs, chainId]
+    [tokenA, tokenB, bases, basePairs, chainId],
   )
 
-  const allPairs = usePairs(allPairCombinations, isUniswap)
+  const allPairs = usePairs(allPairCombinations)
 
   // only pass along valid pairs, non-duplicated pairs
   return useMemo(
@@ -84,9 +85,9 @@ function useAllCommonPairs(currencyA?: Currency, currencyB?: Currency, isUniswap
           .reduce<{ [pairAddress: string]: Pair }>((memo, [, curr]) => {
             memo[curr.liquidityToken.address] = memo[curr.liquidityToken.address] ?? curr
             return memo
-          }, {})
+          }, {}),
       ),
-    [allPairs]
+    [allPairs],
   )
 }
 
@@ -95,12 +96,8 @@ const MAX_HOPS = 3
 /**
  * Returns the best trade for the exact amount of tokens in to the given token out
  */
-export function useTradeExactIn(
-  currencyAmountIn?: CurrencyAmount,
-  currencyOut?: Currency,
-  isUniswap = false
-): Trade | null {
-  const allowedPairs = useAllCommonPairs(currencyAmountIn?.currency, currencyOut, isUniswap)
+export function useTradeExactIn(currencyAmountIn?: CurrencyAmount, currencyOut?: Currency): Trade | null {
+  const allowedPairs = useAllCommonPairs(currencyAmountIn?.currency, currencyOut)
 
   const [singleHopOnly] = useUserSingleHopOnly()
 
@@ -133,12 +130,8 @@ export function useTradeExactIn(
 /**
  * Returns the best trade for the token in to the exact amount of token out
  */
-export function useTradeExactOut(
-  currencyIn?: Currency,
-  currencyAmountOut?: CurrencyAmount,
-  isUniswap = false
-): Trade | null {
-  const allowedPairs = useAllCommonPairs(currencyIn, currencyAmountOut?.currency, isUniswap)
+export function useTradeExactOut(currencyIn?: Currency, currencyAmountOut?: CurrencyAmount): Trade | null {
+  const allowedPairs = useAllCommonPairs(currencyIn, currencyAmountOut?.currency)
 
   const [singleHopOnly] = useUserSingleHopOnly()
 
@@ -168,6 +161,26 @@ export function useTradeExactOut(
 
 export function useIsTransactionUnsupported(currencyIn?: Currency, currencyOut?: Currency): boolean {
   const unsupportedTokens: { [address: string]: Token } = useUnsupportedTokens()
+  const { chainId } = useActiveWeb3React()
+
+  const tokenIn = wrappedCurrency(currencyIn, chainId)
+  const tokenOut = wrappedCurrency(currencyOut, chainId)
+
+  // if unsupported list loaded & either token on list, mark as unsupported
+  if (unsupportedTokens) {
+    if (tokenIn && Object.keys(unsupportedTokens).includes(tokenIn.address)) {
+      return true
+    }
+    if (tokenOut && Object.keys(unsupportedTokens).includes(tokenOut.address)) {
+      return true
+    }
+  }
+
+  return false
+}
+
+export function useIsTransactionWarning(currencyIn?: Currency, currencyOut?: Currency): boolean {
+  const unsupportedTokens: { [address: string]: Token } = useWarningTokens()
   const { chainId } = useActiveWeb3React()
 
   const tokenIn = wrappedCurrency(currencyIn, chainId)

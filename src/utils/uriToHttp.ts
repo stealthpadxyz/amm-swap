@@ -1,3 +1,4 @@
+/* eslint-disable no-case-declarations */
 /**
  * Given a URI that may be ipfs, ipns, http, or https protocol, return the fetch-able http(s) URLs for the same content
  * @param uri to convert to fetch-able http url
@@ -8,7 +9,7 @@ export default function uriToHttp(uri: string): string[] {
     case 'https':
       return [uri]
     case 'http':
-      return ['https' + uri.substr(4), uri]
+      return [`https${uri.substring(4)}`, uri]
     case 'ipfs':
       const hash = uri.match(/^ipfs:(\/\/)?(.*)$/i)?.[2]
       return [`https://cloudflare-ipfs.com/ipfs/${hash}/`, `https://ipfs.io/ipfs/${hash}/`]

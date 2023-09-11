@@ -1,25 +1,35 @@
-# Stealth Pad
+# Puppy Frontend
 
-## Accessing the Stealth Pad
+This project contains the main features of the Puppy application.
 
-To access the Stealth Pad, use an IPFS gateway link from the
-[latest release](https://github.com/Uniswap/uniswap-interface/releases/latest), 
-or visit [app.uniswap.org](https://app.uniswap.org).
+If you want to contribute, please refer to the [contributing guidelines](./CONTRIBUTING.md) of this project.
 
-## Listing a token
+## Documentation
 
-Please see the
-[@uniswap/default-token-list](https://github.com/uniswap/default-token-list) 
-repository.
+- [Info](doc/Info.md)
+- [Cypress tests](doc/Cypress.md)
 
-<h1 align="center">
-  <img src="https://pbs.twimg.com/profile_banners/1693099941265387520/1692985541/1500x500" alt="StealthPad" />
-</h1>
+## Quick Start
 
-## Stealth! 🥷🏾
+install dependencies using **yarn**
 
-- 🦔 Building  [DSCD](https://stealthpad.xyz/) 
+```sh
+yarn
+```
 
-## Contact
+start the development server
 
-- [SleathPad](https://twitter.com/stealthpadxyz) on Twitter
+```sh
+yarn dev
+```
+
+build with production mode
+
+```sh
+yarn build
+
+# start the application after build
+yarn start
+```
+
+yarn export
