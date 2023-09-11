@@ -67,18 +67,15 @@ function MyApp(props: AppProps) {
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=5, minimum-scale=1, viewport-fit=cover"
         />
-        <meta
-          name="description"
-          content="Cheaper and faster than Uniswap? Discover StealthPad, the leading DEX on ShibariumScan with the best farms in DeFi and a lottery for STEALTH."
-        />
+        <meta name="description" content="The leading DEX on multichain for STEALTH." />
         <meta name="theme-color" content="#1FC7D4" />
-        <meta name="twitter:image" content="https://photos.pinksale.finance/file/pinksale-logo-upload/1692031719104-2dec68678d1490b2ef061f1e5258042d.png" />
         <meta
-          name="twitter:description"
-          content="The most popular AMM on ShibariumScan! Earn Punk through yield farming or win it in the Lottery, then stake it in Syrup Pools to earn more tokens! Initial Farm Offerings (new token launch model pioneered by StealthPad), NFTs, and more, on a platform you can trust."
+          name="twitter:image"
+          content="https://raw.githubusercontent.com/stealthpadxyz/amm-swap/main/public/images/brand.jpg"
         />
+        <meta name="twitter:description" content="The AMM for STEALTH chain" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content=" StealthPad - A next evolution DeFi exchange on ShibariumScan" />
+        <meta name="twitter:title" content=" StealthPad - A next evolution DeFi exchange" />
         <title>StealthPad</title>
         {(Component as NextPageWithLayout).mp && (
           // eslint-disable-next-line @next/next/no-sync-scripts
