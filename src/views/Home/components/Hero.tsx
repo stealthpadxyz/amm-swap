@@ -7,7 +7,7 @@ import useTheme from 'hooks/useTheme'
 import Image from 'next/image'
 import styled, { keyframes } from 'styled-components'
 import IFrame from 'components/IFrame/IFrame'
-import bunnyImage from '../../../../public/images/home/lunar-bunny/bunny@2x.png'
+import bunnyImage from '../../../../public/images/home/lunar-bunny/nft-animation-transparent.gif'
 import CompositeImage, { CompositeImageProps } from './CompositeImage'
 import { SlideSvgDark, SlideSvgLight } from './SlideSvg'
 
@@ -133,7 +133,7 @@ const Hero = () => {
           position="relative"
         >
           <BunnyWrapper>
-            <Image src={bunnyImage} priority placeholder="blur" alt={t('Lunar bunny')} />
+            <Image src={bunnyImage} priority  alt={t('Lunar bunny')} />
           </BunnyWrapper>
           {/* <StarsWrapper>
             <CompositeImage {...starsImage} />
