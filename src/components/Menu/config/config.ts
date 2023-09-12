@@ -99,7 +99,7 @@ const config: (
         },
         {
           label: "X",
-          href: "https://twitter.com/stealthpadxyz",
+          href: "https://twitter.com/stealthswaps",
           type: DropdownMenuItemType.EXTERNAL_LINK,
         },
         {

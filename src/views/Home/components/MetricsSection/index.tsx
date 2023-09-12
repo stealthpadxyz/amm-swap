@@ -44,11 +44,11 @@ const Stats = () => {
   }
 
   const TradesCardData: IconCardData = {
-    icon: <FarmIcon color="primary" width="72px" />,
+    icon: <SwapIcon color="primary" width="72px" />,
   }
 
   const StakedCardData: IconCardData = {
-    icon: <SwapIcon color="primary" width="72px" />,
+    icon: <FarmIcon color="primary" width="72px" />,
   }
 
   return (
