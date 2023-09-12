@@ -67,13 +67,13 @@ export function Menu() {
   return (
     <Flex height="56px" bg="backgroundAlt" px="16px" alignItems="center" justifyContent="space-between" zIndex={1}>
       <Flex>
-        <Logo isDark={theme.isDark} href="https://swap.stealthpad.xyz" />
+        <Logo isDark={theme.isDark} href="https://stealthswap.trade" />
 
         <Flex pl={['25px', null, '50px']}>
           <NextLink href="/" passHref>
             <StyledMenuItem $isActive>Transfer</StyledMenuItem>
           </NextLink>
-          <StyledMenuItem href="https://swap.stealthpad.xyz/swap">Swap</StyledMenuItem>
+          <StyledMenuItem href="https://stealthswap.trade/swap">Swap</StyledMenuItem>
         </Flex>
       </Flex>
       <Flex alignItems="center">

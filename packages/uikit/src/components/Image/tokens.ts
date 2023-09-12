@@ -10,7 +10,7 @@ const tokens = {
       5: "0x1Cd327b11467dF6766cf6FeaD879A15D7F869247",
     },
     decimals: 18,
-    projectLink: "https://swap.stealthpad.xyz/",
+    projectLink: "https://stealthswap.trade/",
   },
   txl: {
     symbol: "TXL",
@@ -489,7 +489,7 @@ const tokens = {
       8453: "0x5fe8bBD2fD4Ee98b45a996DA2fd22263baD7A597",
     },
     decimals: 18,
-    projectLink: "https://swap.stealthpad.xyz/",
+    projectLink: "https://stealthswap.trade/",
   },
   wbone: {
     symbol: "wBONE",
@@ -498,7 +498,7 @@ const tokens = {
       8453: "0x5fe8bBD2fD4Ee98b45a996DA2fd22263baD7A597",
     },
     decimals: 18,
-    projectLink: "https://swap.stealthpad.xyz/",
+    projectLink: "https://stealthswap.trade/",
   },
   blink: {
     symbol: "BLINK",
@@ -657,7 +657,7 @@ const tokens = {
       8453: "0xfE1e507CeB712BDe086f3579d2c03248b2dB77f9",
     },
     decimals: 18,
-    projectLink: "https://swap.stealthpad.xyz/",
+    projectLink: "https://stealthswap.trade/",
   },
   bifi: {
     symbol: "BIFI",

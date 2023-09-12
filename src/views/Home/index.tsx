@@ -45,9 +45,9 @@ const Home: React.FC = () => {
   const { theme } = useTheme()
   const { account } = useWeb3React()
 
-  if (typeof window !== "undefined") {
-    window.location.href = window.location.origin + "/swap";
-  }
+  // if (typeof window !== "undefined") {
+  //   window.location.href = window.location.origin + "/swap";
+  // }
   const HomeSectionContainerStyles = { margin: '0', width: '100%', maxWidth: '968px' }
 
   const { t } = useTranslation()
@@ -59,8 +59,8 @@ const Home: React.FC = () => {
         innerProps={{ style: { margin: '0', width: '100%' } }}
         background={
           theme.isDark
-            ? 'radial-gradient(103.12% 50% at 50% 50%, #21193A 0%, #191326 100%)'
-            : 'linear-gradient(139.73deg, #E6FDFF 0%, #F3EFFF 100%)'
+            ? 'radial-gradient(103.12% 50% at 50% 50%, #262626 0%, #171717 100%)'
+            : 'linear-gradient(139.73deg, #262626 0%, #fefefe 100%)'
         }
         index={2}
         hasCurvedDivider={false}
@@ -73,18 +73,18 @@ const Home: React.FC = () => {
         <MultipleBanner /> */}
         <Hero />
       </StyledHeroSection>
-      {/* <PageSection
+      <PageSection
         innerProps={{ style: { margin: '0', width: '100%' } }}
         background={
           theme.isDark
-            ? 'linear-gradient(180deg, #09070C 22%, #201335 100%)'
+            ? 'linear-gradient(180deg, #090909 22%, #202020 100%)'
             : 'linear-gradient(180deg, #FFFFFF 22%, #D7CAEC 100%)'
         }
         index={2}
         hasCurvedDivider={false}
       >
         <MetricsSection />
-      </PageSection> */}
+      </PageSection>
       {/* <PageSection
         innerProps={{ style: HomeSectionContainerStyles }}
         background={theme.colors.background}

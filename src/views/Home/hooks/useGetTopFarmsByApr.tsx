@@ -65,7 +65,7 @@ const useGetTopFarmsByApr = (isIntersecting: boolean) => {
           farm.poolWeight,
           cakePriceBusd,
           totalLiquidity,
-          farm.lpAddresses[ChainId.BSC],
+          farm.lpAddresses[chainId],
           regularCakePerBlock,
         )
         return { ...farm, apr: cakeRewardsApr, lpRewardsApr }
@@ -79,7 +79,7 @@ const useGetTopFarmsByApr = (isIntersecting: boolean) => {
     if (fetchStatus === FetchStatus.Fetched && !topFarms[0]) {
       getTopFarmsByApr(farms)
     }
-  }, [setTopFarms, farms, fetchStatus, cakePriceBusd, topFarms, regularCakePerBlock])
+  }, [setTopFarms, farms, fetchStatus, cakePriceBusd, topFarms, regularCakePerBlock, chainId])
 
   return { topFarms, fetchStatus, totalLP, fetched }
 }

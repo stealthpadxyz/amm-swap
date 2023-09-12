@@ -1912,7 +1912,7 @@ exports[`renders correctly 1`] = `
           >
             <a
               class="c27"
-              href="https://swap.stealthpad.xyz/swap?outputCurrency=0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf"
+              href="https://stealthswap.trade/swap?outputCurrency=0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf"
               target="_blank"
             >
               <svg
@@ -3145,7 +3145,7 @@ exports[`renders correctly 1`] = `
                 >
                   <a
                     class="c27"
-                    href="https://swap.stealthpad.xyz/swap?outputCurrency=0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf"
+                    href="https://stealthswap.trade/swap?outputCurrency=0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf"
                     target="_blank"
                   >
                     <svg
@@ -3209,7 +3209,7 @@ exports[`renders correctly 1`] = `
                 </div>
                 <a
                   class="c92"
-                  href="https://swap.stealthpad.xyz/swap?outputCurrency=0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf"
+                  href="https://stealthswap.trade/swap?outputCurrency=0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf"
                   scale="sm"
                   target="_blank"
                 >

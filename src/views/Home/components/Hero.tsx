@@ -6,6 +6,7 @@ import { useTranslation } from 'contexts/Localization'
 import useTheme from 'hooks/useTheme'
 import Image from 'next/image'
 import styled, { keyframes } from 'styled-components'
+import IFrame from 'components/IFrame/IFrame'
 import bunnyImage from '../../../../public/images/home/lunar-bunny/bunny@2x.png'
 import CompositeImage, { CompositeImageProps } from './CompositeImage'
 import { SlideSvgDark, SlideSvgLight } from './SlideSvg'
@@ -102,28 +103,28 @@ const Hero = () => {
       <Flex
         position="relative"
         flexDirection={['column-reverse', null, null, 'row']}
-        alignItems={['flex-end', null, null, 'center']}
+        alignItems={['center', null, null, 'center']}
         justifyContent="center"
-        mt={[account ? '280px' : '50px', null, 0]}
+        mt={[null, null, 0]}
         id="homepage-hero"
       >
         <Flex flex="1" flexDirection="column">
           <Heading scale="xxl" color="secondary" mb="24px">
-            {t("Punkswap become world's best community.")}
+            {t("Welcome to StealthSwap")}
           </Heading>
           <Heading scale="md" mb="24px">
-            {t('The next chapter in the Puppy Chain ecosystem is coming! StealthPad is an automated market maker (AMM) that allows users to exchange tokens, providing liquidity via farming, staking, and earning rewards in return.')}
+            {t('StealthSwap is an automated market maker (AMM) that allows users to exchange tokens, providing liquidity via farming, staking, and earning rewards in return.')}
           </Heading>
           <Flex>
             {!account && <ConnectWalletButton mr="8px" />}
             <NextLinkFromReactRouter to="/swap">
               <Button variant={!account ? 'secondary' : 'primary'}>{t('Trade Now')}</Button>
             </NextLinkFromReactRouter>
-            <Link href="https://bridge.punkswap.exchange/" style={{marginLeft: "16px"}} external>
-              <Button variant={!account ? 'secondary' : 'primary'}>{t('Bridge')}</Button>
-            </Link>
           </Flex>
         </Flex>
+        {/* <Flex>
+          <IFrame width='560' height='315' src='https://defillama.com/chart/protocol/stealthpad?&theme=dark' />
+        </Flex> */}
         <Flex
           height={['192px', null, null, '100%']}
           width={['192px', null, null, '100%']}
@@ -134,9 +135,9 @@ const Hero = () => {
           <BunnyWrapper>
             <Image src={bunnyImage} priority placeholder="blur" alt={t('Lunar bunny')} />
           </BunnyWrapper>
-          <StarsWrapper>
+          {/* <StarsWrapper>
             <CompositeImage {...starsImage} />
-          </StarsWrapper>
+          </StarsWrapper> */}
         </Flex>
       </Flex>
     </>

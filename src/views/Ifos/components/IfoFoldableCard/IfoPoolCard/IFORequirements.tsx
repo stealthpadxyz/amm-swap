@@ -22,7 +22,7 @@ const NotOkNFT = ({ admissionProfile }) => {
         <>
           <LinkExternal
             style={{ display: 'inline' }}
-            href={`https://swap.stealthpad.xyz/nfts/collections/${admissionProfile}`}
+            href={`https://stealthswap.trade/nfts/collections/${admissionProfile}`}
           >
             {t('Pancake Squad NFT')}
           </LinkExternal>
@@ -50,7 +50,7 @@ const NotOkProfilePoints = ({ pointThreshold }) => {
           <br />
           <LinkExternal
             style={{ display: 'inline' }}
-            href={`https://swap.stealthpad.xyz/profile/${account}/achievements/`}
+            href={`https://stealthswap.trade/profile/${account}/achievements/`}
           >
             {t('Pancake Profile')}
           </LinkExternal>

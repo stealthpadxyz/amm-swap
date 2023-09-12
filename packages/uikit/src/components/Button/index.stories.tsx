@@ -72,7 +72,7 @@ export const Anchors: React.FC = () => {
                 return (
                   <Button
                     as="a"
-                    href="https://swap.stealthpad.xyz"
+                    href="https://stealthswap.trade"
                     key={scale}
                     variant={variant}
                     scale={scale}
@@ -88,10 +88,10 @@ export const Anchors: React.FC = () => {
         })}
       </Box>
       <Box>
-        <Button as="a" href="https://swap.stealthpad.xyz" mr="8px" external disabled>
+        <Button as="a" href="https://stealthswap.trade" mr="8px" external disabled>
           Disabled
         </Button>
-        <Button as="a" href="https://swap.stealthpad.xyz" variant="secondary" external disabled>
+        <Button as="a" href="https://stealthswap.trade" variant="secondary" external disabled>
           Disabled
         </Button>
       </Box>

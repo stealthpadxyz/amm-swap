@@ -161,7 +161,7 @@ export const userMenulinks: DropdownMenuItems[] = [
   },
   {
     type: DropdownMenuItemType.EXTERNAL_LINK,
-    href: "https://swap.stealthpad.xyz",
+    href: "https://stealthswap.trade",
     label: "Link",
   },
   {

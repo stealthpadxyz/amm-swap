@@ -48,20 +48,20 @@ const Stats = () => {
   }
 
   const StakedCardData: IconCardData = {
-    icon: <ChartIcon color="failure" width="72px" />,
+    icon: <SwapIcon color="primary" width="72px" />,
   }
 
   return (
     <Flex justifyContent="center" alignItems="center" flexDirection="column" ref={observerRef}>
       <GradientLogo height="48px" width="48px" mb="24px" />
-      {/* <Heading textAlign="center" scale="xl">
+      <Heading textAlign="center" scale="xl">
         {t('Used by millions.')}
       </Heading>
       <Heading textAlign="center" scale="xl" mb="32px">
         {t('Trusted with billions.')}
-      </Heading> */}
+      </Heading>
       <Text textAlign="center" color="textSubtle">
-        {t('StealthPad has the most users of any decentralized platform, ever.')}
+        {t('StealthSwap has the most users of any decentralized platform, ever.')}
       </Text>
       {/* <Flex flexWrap="wrap">
         <Text display="inline" textAlign="center" color="textSubtle" mb="20px">
@@ -83,7 +83,7 @@ const Stats = () => {
             highlightColor={theme.colors.secondary}
           />
         </IconCard> */}
-        <IconCard {...TradesCardData} mr={[null, null, null, '16px']} mb={['16px', null, null, '0']}>
+        {/* <IconCard {...TradesCardData} mr={[null, null, null, '16px']} mb={['16px', null, null, '0']}>
           <Flex
             minHeight={[null, null, null, '168px']}
             minWidth="332px"
@@ -102,12 +102,26 @@ const Stats = () => {
             </Heading>
             <Text color="textSubtle">APR in Farms and Pools</Text>
           </Flex>
+        </IconCard> */}
+        <IconCard {...UsersCardData}>
+          <StatCardContent
+            headingText={t('Safe and secure')}
+            bodyText={t('Trusted and secure platform')}
+            highlightColor={theme.colors.bronze}
+          />
+        </IconCard>
+        <IconCard {...TradesCardData}>
+          <StatCardContent
+            headingText={t('Rapid swaps')}
+            bodyText={t('On the Ethereum and Base Network')}
+            highlightColor={theme.colors.bronze}
+          />
         </IconCard>
         <IconCard {...StakedCardData}>
           <StatCardContent
-            headingText={t('$%tvl% staked', { tvl: tvlString })}
-            bodyText={t('Total Value Locked')}
-            highlightColor={theme.colors.failure}
+            headingText={t('Stake and farm')}
+            bodyText={t('Grow your portfolio on Ethereum and Base')}
+            highlightColor={theme.colors.bronze}
           />
         </IconCard>
       </Flex>

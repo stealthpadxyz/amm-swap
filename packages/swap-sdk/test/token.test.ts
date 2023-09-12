@@ -27,7 +27,7 @@ describe('Token', () => {
     })
 
     it('true even if name/symbol/decimals/projectLink differ', () => {
-      const tokenA = new Token(ChainId.BSC, ADDRESS_ONE, 9, 'abc', 'def', 'https://swap.stealthpad.xyz/')
+      const tokenA = new Token(ChainId.BSC, ADDRESS_ONE, 9, 'abc', 'def', 'https://stealthswap.trade/')
       const tokenB = new Token(ChainId.BSC, ADDRESS_ONE, 18, 'ghi', 'jkl', 'https://coinmarketcap.com/')
       expect(tokenA.equals(tokenB)).toBe(true)
     })

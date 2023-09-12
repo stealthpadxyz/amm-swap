@@ -91,7 +91,7 @@ export const WETH = {
     18,
     'WETH',
     'Wrapped ETH',
-    'https://swap.stealthpad.xyz'
+    'https://stealthswap.trade'
   ),
   [ChainId.BASE]: new Token(
     ChainId.BASE,
@@ -99,7 +99,7 @@ export const WETH = {
     18,
     'WETH',
     'Wrapped ETH',
-    'https://swap.stealthpad.xyz'
+    'https://stealthswap.trade'
   ),
   [ChainId.STEALTH_TESTNET]: new Token(
     ChainId.STEALTH_TESTNET,
@@ -107,7 +107,7 @@ export const WETH = {
     18,
     'WETH',
     'Wrapped ETH',
-    'https://swap.stealthpad.xyz'
+    'https://stealthswap.trade'
   ),
 }
 

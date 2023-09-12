@@ -6,7 +6,7 @@ const STEALTH_ETH = new Token(
   8,
   'STEALTH',
   'StealthPad Token',
-  'https://swap.stealthpad.xyz/',
+  'https://stealthswap.trade/',
 )
 
 const STEALTH_BASE = new Token(
@@ -15,7 +15,7 @@ const STEALTH_BASE = new Token(
   8,
   'STEALTH',
   'StealthPad Token',
-  'https://swap.stealthpad.xyz/',
+  'https://stealthswap.trade/',
 )
 
 const STEALTH_MAIN = new Token(
@@ -24,7 +24,7 @@ const STEALTH_MAIN = new Token(
   8,
   'STEALTH',
   'StealthPad Token',
-  'https://swap.stealthpad.xyz/',
+  'https://stealthswap.trade/',
 )
 
 const USDT_BSC = new Token(
@@ -312,7 +312,7 @@ export const bscTokens = {
     18,
     'SYRUP',
     'SyrupBar Token',
-    'https://swap.stealthpad.xyz/',
+    'https://stealthswap.trade/',
   ),
   pha: new Token(
     ChainId.BSC,
@@ -2373,7 +2373,7 @@ export const bscTestnetTokens = {
     18,
     'SYRUP',
     'SyrupBar Token',
-    'https://swap.stealthpad.xyz/',
+    'https://stealthswap.trade/',
   ),
   bake: new Token(
     ChainId.BASE,
@@ -2396,7 +2396,7 @@ export const stealthTestnetTokens = {
     18,
     'SYRUP',
     'SyrupBar Token',
-    'https://swap.stealthpad.xyz/',
+    'https://stealthswap.trade/',
   ),
   bake: new Token(
     ChainId.BASE,

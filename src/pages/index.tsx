@@ -9,11 +9,12 @@ import { getCakeVaultAddress } from 'utils/addressHelpers'
 import { getCakeContract } from 'utils/contractHelpers'
 import { getBlocksFromTimestamps } from 'utils/getBlocksFromTimestamps'
 import { formatEther } from '@ethersproject/units'
+import Home from 'views/Home'
 import Swap from '../views/Swap'
 
 const IndexPage = ({ totalTx30Days, addressCount30Days, tvl }) => {
   return (
-    <Swap />
+    // <Swap />
     // <SWRConfig
     //   value={{
     //     fallback: {
@@ -23,7 +24,7 @@ const IndexPage = ({ totalTx30Days, addressCount30Days, tvl }) => {
     //     },
     //   }}
     // >
-    //   <Home />
+      <Home />
     // </SWRConfig>
   )
 }
