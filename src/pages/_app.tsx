@@ -94,7 +94,7 @@ function MyApp(props: AppProps) {
           </PersistGate>
         </Blocklist>
       </Providers>
-      <Script
+      {/* <Script
         strategy="afterInteractive"
         id="google-tag"
         dangerouslySetInnerHTML={{
@@ -106,7 +106,24 @@ function MyApp(props: AppProps) {
             })(window,document,'script','dataLayer', '${process.env.NEXT_PUBLIC_GTAG}');
           `,
         }}
+      /> */}
+      <Script
+        strategy="lazyOnload"
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
       />
+
+      <Script
+        strategy="lazyOnload"
+        id="google-tag">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+            page_path: window.location.pathname,
+            });
+          `}
+      </Script>
     </>
   )
 }
