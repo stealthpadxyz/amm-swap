@@ -92,7 +92,7 @@ const RoiCalculatorModal: React.FC<RoiCalculatorModalProps> = ({
   stakingTokenPrice,
   multiplier,
   initialValue,
-  earningTokenSymbol = 'STEALTH',
+  earningTokenSymbol = 'SWAP',
   autoCompoundFrequency = 0,
   performanceFee = 0,
   isFarm = false,

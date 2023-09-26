@@ -54,7 +54,7 @@ const EasterBattleBanner = () => {
         {t('$200,000 in Prizes!')}
       </StyledHeading2Text>
       <StyledHeading scale="md" color={theme.isDark ? 'textSubtle' : 'inputSecondary'} mt="16px">
-        {t('Compete with other teams to win STEALTH, collectible NFTs, achievements & more!')}
+        {t('Compete with other teams to win SWAP, collectible NFTs, achievements & more!')}
       </StyledHeading>
     </Flex>
   )

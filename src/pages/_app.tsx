@@ -67,13 +67,13 @@ function MyApp(props: AppProps) {
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=5, minimum-scale=1, viewport-fit=cover"
         />
-        <meta name="description" content="The leading DEX on multichain for STEALTH." />
+        <meta name="description" content="The leading DEX on multichain for SWAP." />
         <meta name="theme-color" content="#1FC7D4" />
         <meta
           name="twitter:image"
           content="https://raw.githubusercontent.com/stealthpadxyz/amm-swap/main/public/images/brand.jpg"
         />
-        <meta name="twitter:description" content="The AMM for STEALTH chain" />
+        <meta name="twitter:description" content="The AMM for SWAP chain" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content=" StealthPad - A next evolution DeFi exchange" />
         <title>StealthPad</title>
@@ -112,10 +112,8 @@ function MyApp(props: AppProps) {
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
       />
 
-      <Script
-        strategy="lazyOnload"
-        id="google-tag">
-          {`
+      <Script strategy="lazyOnload" id="google-tag">
+        {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());

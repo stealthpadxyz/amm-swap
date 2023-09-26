@@ -24,7 +24,7 @@ const useGetTopFarmsByApr = (isIntersecting: boolean) => {
   const [topFarms, setTopFarms] = useState<FarmWithStakedValue[]>([null, null, null, null, null])
   const [totalLP, setTotalLP] = useState('0')
   const cakePriceBusd = usePriceCakeBusd()
-  const config = chainId === ChainId.BSC ? farmsConfig : farmsTestConfig
+  const config = chainId !== ChainId.BSC ? farmsTestConfig : farmsConfig
 
   useEffect(() => {
     const fetchFarmData = async () => {

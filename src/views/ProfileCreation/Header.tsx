@@ -32,7 +32,7 @@ const Header: React.FC = () => {
         {t('Show off your stats and collectibles with your unique profile')}
       </Heading>
       <Text color="textSubtle" mb="8px">
-        {t('Total cost: 1.5 STEALTH')}
+        {t('Total cost: 1.5 SWAP')}
       </Text>
       <Link href="/profile">
         <Button mb="24px" scale="sm" variant="secondary">

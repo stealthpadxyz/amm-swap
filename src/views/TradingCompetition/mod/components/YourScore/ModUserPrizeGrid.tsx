@@ -41,7 +41,7 @@ const ModUserPrizeGrid: React.FC<{ userTradingInformation?: UserTradingInformati
         <tr>
           <BoldTd>
             <Flex flexDirection="column">
-              <Text bold>{cakeReward.toFixed(4)} STEALTH</Text>
+              <Text bold>{cakeReward.toFixed(4)} SWAP</Text>
               <Text bold>{darReward.toFixed(4)} DAR</Text>
               <UserPrizeGridDollar dollarValueOfTokensReward={dollarValueOfTokensReward} />
             </Flex>

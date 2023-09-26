@@ -11,7 +11,7 @@ interface PropsType {
 const DateRow: React.FC<PropsType> = ({ title, value, color }) => {
   const { t } = useTranslation()
   const tooltipContent = t(
-    'You will be able to withdraw the staked STEALTH and profit only when the staking position is unlocked, i.e. when the staking period ends.',
+    'You will be able to withdraw the staked SWAP and profit only when the staking position is unlocked, i.e. when the staking period ends.',
   )
   const { targetRef, tooltip, tooltipVisible } = useTooltip(tooltipContent, { placement: 'bottom-start' })
 

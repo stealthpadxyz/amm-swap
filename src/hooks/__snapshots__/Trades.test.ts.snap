@@ -15,12 +15,12 @@ exports[`Trade #useAllCommonPairs should get all pair combinations wbnb, cake 1`
             "symbol": "WETH",
           },
           Token {
-            "address": "0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf",
+            "address": "0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C",
             "chainId": 56,
             "decimals": 18,
             "name": "StealthPad Token",
             "projectLink": "https://stealthswap.trade/",
-            "symbol": "STEALTH",
+            "symbol": "SWAP",
           },
         ],
         Array [
@@ -33,228 +33,12 @@ exports[`Trade #useAllCommonPairs should get all pair combinations wbnb, cake 1`
             "symbol": "WETH",
           },
           Token {
-            "address": "0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf",
+            "address": "0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C",
             "chainId": 56,
             "decimals": 18,
             "name": "StealthPad Token",
             "projectLink": "https://stealthswap.trade/",
-            "symbol": "STEALTH",
-          },
-        ],
-        Array [
-          Token {
-            "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
-            "chainId": 56,
-            "decimals": 18,
-            "name": "Wrapped ETH",
-            "projectLink": "https://stealthswap.trade",
-            "symbol": "WETH",
-          },
-          Token {
-            "address": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
-            "chainId": 56,
-            "decimals": 18,
-            "name": "Binance USD",
-            "projectLink": "https://www.paxos.com/busd/",
-            "symbol": "BUSD",
-          },
-        ],
-        Array [
-          Token {
-            "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
-            "chainId": 56,
-            "decimals": 18,
-            "name": "Wrapped ETH",
-            "projectLink": "https://stealthswap.trade",
-            "symbol": "WETH",
-          },
-          Token {
-            "address": "0x55d398326f99059fF775485246999027B3197955",
-            "chainId": 56,
-            "decimals": 18,
-            "name": "Tether USD",
-            "projectLink": "https://tether.to/",
-            "symbol": "USDT",
-          },
-        ],
-        Array [
-          Token {
-            "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
-            "chainId": 56,
-            "decimals": 18,
-            "name": "Wrapped ETH",
-            "projectLink": "https://stealthswap.trade",
-            "symbol": "WETH",
-          },
-          Token {
-            "address": "0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c",
-            "chainId": 56,
-            "decimals": 18,
-            "name": "Binance BTC",
-            "projectLink": "https://bitcoin.org/",
-            "symbol": "BTCB",
-          },
-        ],
-        Array [
-          Token {
-            "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
-            "chainId": 56,
-            "decimals": 18,
-            "name": "Wrapped ETH",
-            "projectLink": "https://stealthswap.trade",
-            "symbol": "WETH",
-          },
-          Token {
-            "address": "0x2170Ed0880ac9A755fd29B2688956BD959F933F8",
-            "chainId": 56,
-            "decimals": 18,
-            "name": "Binance-Peg Ethereum Token",
-            "projectLink": "https://ethereum.org/en/",
-            "symbol": "ETH",
-          },
-        ],
-        Array [
-          Token {
-            "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
-            "chainId": 56,
-            "decimals": 18,
-            "name": "Wrapped ETH",
-            "projectLink": "https://stealthswap.trade",
-            "symbol": "WETH",
-          },
-          Token {
-            "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-            "chainId": 56,
-            "decimals": 18,
-            "name": "Binance-Peg USD Coin",
-            "projectLink": "https://www.centre.io/usdc",
-            "symbol": "USDC",
-          },
-        ],
-        Array [
-          Token {
-            "address": "0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf",
-            "chainId": 56,
-            "decimals": 18,
-            "name": "StealthPad Token",
-            "projectLink": "https://stealthswap.trade/",
-            "symbol": "STEALTH",
-          },
-          Token {
-            "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
-            "chainId": 56,
-            "decimals": 18,
-            "name": "Wrapped ETH",
-            "projectLink": "https://stealthswap.trade",
-            "symbol": "WETH",
-          },
-        ],
-        Array [
-          Token {
-            "address": "0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf",
-            "chainId": 56,
-            "decimals": 18,
-            "name": "StealthPad Token",
-            "projectLink": "https://stealthswap.trade/",
-            "symbol": "STEALTH",
-          },
-          Token {
-            "address": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
-            "chainId": 56,
-            "decimals": 18,
-            "name": "Binance USD",
-            "projectLink": "https://www.paxos.com/busd/",
-            "symbol": "BUSD",
-          },
-        ],
-        Array [
-          Token {
-            "address": "0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf",
-            "chainId": 56,
-            "decimals": 18,
-            "name": "StealthPad Token",
-            "projectLink": "https://stealthswap.trade/",
-            "symbol": "STEALTH",
-          },
-          Token {
-            "address": "0x55d398326f99059fF775485246999027B3197955",
-            "chainId": 56,
-            "decimals": 18,
-            "name": "Tether USD",
-            "projectLink": "https://tether.to/",
-            "symbol": "USDT",
-          },
-        ],
-        Array [
-          Token {
-            "address": "0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf",
-            "chainId": 56,
-            "decimals": 18,
-            "name": "StealthPad Token",
-            "projectLink": "https://stealthswap.trade/",
-            "symbol": "STEALTH",
-          },
-          Token {
-            "address": "0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c",
-            "chainId": 56,
-            "decimals": 18,
-            "name": "Binance BTC",
-            "projectLink": "https://bitcoin.org/",
-            "symbol": "BTCB",
-          },
-        ],
-        Array [
-          Token {
-            "address": "0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf",
-            "chainId": 56,
-            "decimals": 18,
-            "name": "StealthPad Token",
-            "projectLink": "https://stealthswap.trade/",
-            "symbol": "STEALTH",
-          },
-          Token {
-            "address": "0x2170Ed0880ac9A755fd29B2688956BD959F933F8",
-            "chainId": 56,
-            "decimals": 18,
-            "name": "Binance-Peg Ethereum Token",
-            "projectLink": "https://ethereum.org/en/",
-            "symbol": "ETH",
-          },
-        ],
-        Array [
-          Token {
-            "address": "0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf",
-            "chainId": 56,
-            "decimals": 18,
-            "name": "StealthPad Token",
-            "projectLink": "https://stealthswap.trade/",
-            "symbol": "STEALTH",
-          },
-          Token {
-            "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-            "chainId": 56,
-            "decimals": 18,
-            "name": "Binance-Peg USD Coin",
-            "projectLink": "https://www.centre.io/usdc",
-            "symbol": "USDC",
-          },
-        ],
-        Array [
-          Token {
-            "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
-            "chainId": 56,
-            "decimals": 18,
-            "name": "Wrapped ETH",
-            "projectLink": "https://stealthswap.trade",
-            "symbol": "WETH",
-          },
-          Token {
-            "address": "0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf",
-            "chainId": 56,
-            "decimals": 18,
-            "name": "StealthPad Token",
-            "projectLink": "https://stealthswap.trade/",
-            "symbol": "STEALTH",
+            "symbol": "SWAP",
           },
         ],
         Array [
@@ -349,12 +133,12 @@ exports[`Trade #useAllCommonPairs should get all pair combinations wbnb, cake 1`
         ],
         Array [
           Token {
-            "address": "0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf",
+            "address": "0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C",
             "chainId": 56,
             "decimals": 18,
             "name": "StealthPad Token",
             "projectLink": "https://stealthswap.trade/",
-            "symbol": "STEALTH",
+            "symbol": "SWAP",
           },
           Token {
             "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
@@ -367,12 +151,12 @@ exports[`Trade #useAllCommonPairs should get all pair combinations wbnb, cake 1`
         ],
         Array [
           Token {
-            "address": "0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf",
+            "address": "0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C",
             "chainId": 56,
             "decimals": 18,
             "name": "StealthPad Token",
             "projectLink": "https://stealthswap.trade/",
-            "symbol": "STEALTH",
+            "symbol": "SWAP",
           },
           Token {
             "address": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
@@ -385,12 +169,12 @@ exports[`Trade #useAllCommonPairs should get all pair combinations wbnb, cake 1`
         ],
         Array [
           Token {
-            "address": "0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf",
+            "address": "0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C",
             "chainId": 56,
             "decimals": 18,
             "name": "StealthPad Token",
             "projectLink": "https://stealthswap.trade/",
-            "symbol": "STEALTH",
+            "symbol": "SWAP",
           },
           Token {
             "address": "0x55d398326f99059fF775485246999027B3197955",
@@ -403,12 +187,12 @@ exports[`Trade #useAllCommonPairs should get all pair combinations wbnb, cake 1`
         ],
         Array [
           Token {
-            "address": "0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf",
+            "address": "0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C",
             "chainId": 56,
             "decimals": 18,
             "name": "StealthPad Token",
             "projectLink": "https://stealthswap.trade/",
-            "symbol": "STEALTH",
+            "symbol": "SWAP",
           },
           Token {
             "address": "0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c",
@@ -421,12 +205,12 @@ exports[`Trade #useAllCommonPairs should get all pair combinations wbnb, cake 1`
         ],
         Array [
           Token {
-            "address": "0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf",
+            "address": "0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C",
             "chainId": 56,
             "decimals": 18,
             "name": "StealthPad Token",
             "projectLink": "https://stealthswap.trade/",
-            "symbol": "STEALTH",
+            "symbol": "SWAP",
           },
           Token {
             "address": "0x2170Ed0880ac9A755fd29B2688956BD959F933F8",
@@ -439,12 +223,228 @@ exports[`Trade #useAllCommonPairs should get all pair combinations wbnb, cake 1`
         ],
         Array [
           Token {
-            "address": "0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf",
+            "address": "0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C",
             "chainId": 56,
             "decimals": 18,
             "name": "StealthPad Token",
             "projectLink": "https://stealthswap.trade/",
-            "symbol": "STEALTH",
+            "symbol": "SWAP",
+          },
+          Token {
+            "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "chainId": 56,
+            "decimals": 18,
+            "name": "Binance-Peg USD Coin",
+            "projectLink": "https://www.centre.io/usdc",
+            "symbol": "USDC",
+          },
+        ],
+        Array [
+          Token {
+            "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+            "chainId": 56,
+            "decimals": 18,
+            "name": "Wrapped ETH",
+            "projectLink": "https://stealthswap.trade",
+            "symbol": "WETH",
+          },
+          Token {
+            "address": "0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C",
+            "chainId": 56,
+            "decimals": 18,
+            "name": "StealthPad Token",
+            "projectLink": "https://stealthswap.trade/",
+            "symbol": "SWAP",
+          },
+        ],
+        Array [
+          Token {
+            "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+            "chainId": 56,
+            "decimals": 18,
+            "name": "Wrapped ETH",
+            "projectLink": "https://stealthswap.trade",
+            "symbol": "WETH",
+          },
+          Token {
+            "address": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
+            "chainId": 56,
+            "decimals": 18,
+            "name": "Binance USD",
+            "projectLink": "https://www.paxos.com/busd/",
+            "symbol": "BUSD",
+          },
+        ],
+        Array [
+          Token {
+            "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+            "chainId": 56,
+            "decimals": 18,
+            "name": "Wrapped ETH",
+            "projectLink": "https://stealthswap.trade",
+            "symbol": "WETH",
+          },
+          Token {
+            "address": "0x55d398326f99059fF775485246999027B3197955",
+            "chainId": 56,
+            "decimals": 18,
+            "name": "Tether USD",
+            "projectLink": "https://tether.to/",
+            "symbol": "USDT",
+          },
+        ],
+        Array [
+          Token {
+            "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+            "chainId": 56,
+            "decimals": 18,
+            "name": "Wrapped ETH",
+            "projectLink": "https://stealthswap.trade",
+            "symbol": "WETH",
+          },
+          Token {
+            "address": "0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c",
+            "chainId": 56,
+            "decimals": 18,
+            "name": "Binance BTC",
+            "projectLink": "https://bitcoin.org/",
+            "symbol": "BTCB",
+          },
+        ],
+        Array [
+          Token {
+            "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+            "chainId": 56,
+            "decimals": 18,
+            "name": "Wrapped ETH",
+            "projectLink": "https://stealthswap.trade",
+            "symbol": "WETH",
+          },
+          Token {
+            "address": "0x2170Ed0880ac9A755fd29B2688956BD959F933F8",
+            "chainId": 56,
+            "decimals": 18,
+            "name": "Binance-Peg Ethereum Token",
+            "projectLink": "https://ethereum.org/en/",
+            "symbol": "ETH",
+          },
+        ],
+        Array [
+          Token {
+            "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+            "chainId": 56,
+            "decimals": 18,
+            "name": "Wrapped ETH",
+            "projectLink": "https://stealthswap.trade",
+            "symbol": "WETH",
+          },
+          Token {
+            "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "chainId": 56,
+            "decimals": 18,
+            "name": "Binance-Peg USD Coin",
+            "projectLink": "https://www.centre.io/usdc",
+            "symbol": "USDC",
+          },
+        ],
+        Array [
+          Token {
+            "address": "0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C",
+            "chainId": 56,
+            "decimals": 18,
+            "name": "StealthPad Token",
+            "projectLink": "https://stealthswap.trade/",
+            "symbol": "SWAP",
+          },
+          Token {
+            "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+            "chainId": 56,
+            "decimals": 18,
+            "name": "Wrapped ETH",
+            "projectLink": "https://stealthswap.trade",
+            "symbol": "WETH",
+          },
+        ],
+        Array [
+          Token {
+            "address": "0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C",
+            "chainId": 56,
+            "decimals": 18,
+            "name": "StealthPad Token",
+            "projectLink": "https://stealthswap.trade/",
+            "symbol": "SWAP",
+          },
+          Token {
+            "address": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
+            "chainId": 56,
+            "decimals": 18,
+            "name": "Binance USD",
+            "projectLink": "https://www.paxos.com/busd/",
+            "symbol": "BUSD",
+          },
+        ],
+        Array [
+          Token {
+            "address": "0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C",
+            "chainId": 56,
+            "decimals": 18,
+            "name": "StealthPad Token",
+            "projectLink": "https://stealthswap.trade/",
+            "symbol": "SWAP",
+          },
+          Token {
+            "address": "0x55d398326f99059fF775485246999027B3197955",
+            "chainId": 56,
+            "decimals": 18,
+            "name": "Tether USD",
+            "projectLink": "https://tether.to/",
+            "symbol": "USDT",
+          },
+        ],
+        Array [
+          Token {
+            "address": "0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C",
+            "chainId": 56,
+            "decimals": 18,
+            "name": "StealthPad Token",
+            "projectLink": "https://stealthswap.trade/",
+            "symbol": "SWAP",
+          },
+          Token {
+            "address": "0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c",
+            "chainId": 56,
+            "decimals": 18,
+            "name": "Binance BTC",
+            "projectLink": "https://bitcoin.org/",
+            "symbol": "BTCB",
+          },
+        ],
+        Array [
+          Token {
+            "address": "0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C",
+            "chainId": 56,
+            "decimals": 18,
+            "name": "StealthPad Token",
+            "projectLink": "https://stealthswap.trade/",
+            "symbol": "SWAP",
+          },
+          Token {
+            "address": "0x2170Ed0880ac9A755fd29B2688956BD959F933F8",
+            "chainId": 56,
+            "decimals": 18,
+            "name": "Binance-Peg Ethereum Token",
+            "projectLink": "https://ethereum.org/en/",
+            "symbol": "ETH",
+          },
+        ],
+        Array [
+          Token {
+            "address": "0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C",
+            "chainId": 56,
+            "decimals": 18,
+            "name": "StealthPad Token",
+            "projectLink": "https://stealthswap.trade/",
+            "symbol": "SWAP",
           },
           Token {
             "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
@@ -483,12 +483,12 @@ exports[`Trade #useAllCommonPairs should get all pair combinations wbnb, cake 1`
             "symbol": "BUSD",
           },
           Token {
-            "address": "0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf",
+            "address": "0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C",
             "chainId": 56,
             "decimals": 18,
             "name": "StealthPad Token",
             "projectLink": "https://stealthswap.trade/",
-            "symbol": "STEALTH",
+            "symbol": "SWAP",
           },
         ],
         Array [
@@ -591,12 +591,12 @@ exports[`Trade #useAllCommonPairs should get all pair combinations wbnb, cake 1`
             "symbol": "USDT",
           },
           Token {
-            "address": "0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf",
+            "address": "0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C",
             "chainId": 56,
             "decimals": 18,
             "name": "StealthPad Token",
             "projectLink": "https://stealthswap.trade/",
-            "symbol": "STEALTH",
+            "symbol": "SWAP",
           },
         ],
         Array [
@@ -699,12 +699,12 @@ exports[`Trade #useAllCommonPairs should get all pair combinations wbnb, cake 1`
             "symbol": "BTCB",
           },
           Token {
-            "address": "0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf",
+            "address": "0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C",
             "chainId": 56,
             "decimals": 18,
             "name": "StealthPad Token",
             "projectLink": "https://stealthswap.trade/",
-            "symbol": "STEALTH",
+            "symbol": "SWAP",
           },
         ],
         Array [
@@ -807,12 +807,12 @@ exports[`Trade #useAllCommonPairs should get all pair combinations wbnb, cake 1`
             "symbol": "ETH",
           },
           Token {
-            "address": "0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf",
+            "address": "0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C",
             "chainId": 56,
             "decimals": 18,
             "name": "StealthPad Token",
             "projectLink": "https://stealthswap.trade/",
-            "symbol": "STEALTH",
+            "symbol": "SWAP",
           },
         ],
         Array [
@@ -915,12 +915,12 @@ exports[`Trade #useAllCommonPairs should get all pair combinations wbnb, cake 1`
             "symbol": "USDC",
           },
           Token {
-            "address": "0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf",
+            "address": "0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C",
             "chainId": 56,
             "decimals": 18,
             "name": "StealthPad Token",
             "projectLink": "https://stealthswap.trade/",
-            "symbol": "STEALTH",
+            "symbol": "SWAP",
           },
         ],
         Array [
@@ -1011,17 +1011,17 @@ exports[`Trade #useAllCommonPairs should get all pair combinations wbnb, cake 1`
               "decimals": 18,
               "name": "Pancake LPs",
               "projectLink": undefined,
-              "symbol": "STEALTH-LP",
+              "symbol": "SWAP-LP",
             },
             "tokenAmounts": Array [
               TokenAmount {
                 "currency": Token {
-                  "address": "0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf",
+                  "address": "0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C",
                   "chainId": 56,
                   "decimals": 18,
                   "name": "StealthPad Token",
                   "projectLink": "https://stealthswap.trade/",
-                  "symbol": "STEALTH",
+                  "symbol": "SWAP",
                 },
                 "denominator": JSBI [
                   660865024,
@@ -1031,12 +1031,12 @@ exports[`Trade #useAllCommonPairs should get all pair combinations wbnb, cake 1`
                   1,
                 ],
                 "token": Token {
-                  "address": "0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf",
+                  "address": "0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C",
                   "chainId": 56,
                   "decimals": 18,
                   "name": "StealthPad Token",
                   "projectLink": "https://stealthswap.trade/",
-                  "symbol": "STEALTH",
+                  "symbol": "SWAP",
                 },
               },
               TokenAmount {
@@ -1076,17 +1076,17 @@ exports[`Trade #useAllCommonPairs should get all pair combinations wbnb, cake 1`
               "decimals": 18,
               "name": "Pancake LPs",
               "projectLink": undefined,
-              "symbol": "STEALTH-LP",
+              "symbol": "SWAP-LP",
             },
             "tokenAmounts": Array [
               TokenAmount {
                 "currency": Token {
-                  "address": "0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf",
+                  "address": "0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C",
                   "chainId": 56,
                   "decimals": 18,
                   "name": "StealthPad Token",
                   "projectLink": "https://stealthswap.trade/",
-                  "symbol": "STEALTH",
+                  "symbol": "SWAP",
                 },
                 "denominator": JSBI [
                   660865024,
@@ -1096,12 +1096,12 @@ exports[`Trade #useAllCommonPairs should get all pair combinations wbnb, cake 1`
                   1,
                 ],
                 "token": Token {
-                  "address": "0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf",
+                  "address": "0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C",
                   "chainId": 56,
                   "decimals": 18,
                   "name": "StealthPad Token",
                   "projectLink": "https://stealthswap.trade/",
-                  "symbol": "STEALTH",
+                  "symbol": "SWAP",
                 },
               },
               TokenAmount {
@@ -1141,17 +1141,17 @@ exports[`Trade #useAllCommonPairs should get all pair combinations wbnb, cake 1`
               "decimals": 18,
               "name": "Pancake LPs",
               "projectLink": undefined,
-              "symbol": "STEALTH-LP",
+              "symbol": "SWAP-LP",
             },
             "tokenAmounts": Array [
               TokenAmount {
                 "currency": Token {
-                  "address": "0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf",
+                  "address": "0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C",
                   "chainId": 56,
                   "decimals": 18,
                   "name": "StealthPad Token",
                   "projectLink": "https://stealthswap.trade/",
-                  "symbol": "STEALTH",
+                  "symbol": "SWAP",
                 },
                 "denominator": JSBI [
                   660865024,
@@ -1161,12 +1161,12 @@ exports[`Trade #useAllCommonPairs should get all pair combinations wbnb, cake 1`
                   1,
                 ],
                 "token": Token {
-                  "address": "0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf",
+                  "address": "0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C",
                   "chainId": 56,
                   "decimals": 18,
                   "name": "StealthPad Token",
                   "projectLink": "https://stealthswap.trade/",
-                  "symbol": "STEALTH",
+                  "symbol": "SWAP",
                 },
               },
               TokenAmount {
@@ -1222,12 +1222,12 @@ exports[`Trade #useAllCommonPairs should get all pair combinations, wbnb, wbnb 1
             "symbol": "WETH",
           },
           Token {
-            "address": "0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf",
+            "address": "0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C",
             "chainId": 56,
             "decimals": 18,
             "name": "StealthPad Token",
             "projectLink": "https://stealthswap.trade/",
-            "symbol": "STEALTH",
+            "symbol": "SWAP",
           },
         ],
         Array [
@@ -1330,12 +1330,12 @@ exports[`Trade #useAllCommonPairs should get all pair combinations, wbnb, wbnb 1
             "symbol": "WETH",
           },
           Token {
-            "address": "0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf",
+            "address": "0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C",
             "chainId": 56,
             "decimals": 18,
             "name": "StealthPad Token",
             "projectLink": "https://stealthswap.trade/",
-            "symbol": "STEALTH",
+            "symbol": "SWAP",
           },
         ],
         Array [
@@ -1438,12 +1438,12 @@ exports[`Trade #useAllCommonPairs should get all pair combinations, wbnb, wbnb 1
             "symbol": "WETH",
           },
           Token {
-            "address": "0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf",
+            "address": "0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C",
             "chainId": 56,
             "decimals": 18,
             "name": "StealthPad Token",
             "projectLink": "https://stealthswap.trade/",
-            "symbol": "STEALTH",
+            "symbol": "SWAP",
           },
         ],
         Array [
@@ -1538,12 +1538,12 @@ exports[`Trade #useAllCommonPairs should get all pair combinations, wbnb, wbnb 1
         ],
         Array [
           Token {
-            "address": "0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf",
+            "address": "0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C",
             "chainId": 56,
             "decimals": 18,
             "name": "StealthPad Token",
             "projectLink": "https://stealthswap.trade/",
-            "symbol": "STEALTH",
+            "symbol": "SWAP",
           },
           Token {
             "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
@@ -1556,12 +1556,12 @@ exports[`Trade #useAllCommonPairs should get all pair combinations, wbnb, wbnb 1
         ],
         Array [
           Token {
-            "address": "0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf",
+            "address": "0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C",
             "chainId": 56,
             "decimals": 18,
             "name": "StealthPad Token",
             "projectLink": "https://stealthswap.trade/",
-            "symbol": "STEALTH",
+            "symbol": "SWAP",
           },
           Token {
             "address": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
@@ -1574,12 +1574,12 @@ exports[`Trade #useAllCommonPairs should get all pair combinations, wbnb, wbnb 1
         ],
         Array [
           Token {
-            "address": "0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf",
+            "address": "0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C",
             "chainId": 56,
             "decimals": 18,
             "name": "StealthPad Token",
             "projectLink": "https://stealthswap.trade/",
-            "symbol": "STEALTH",
+            "symbol": "SWAP",
           },
           Token {
             "address": "0x55d398326f99059fF775485246999027B3197955",
@@ -1592,12 +1592,12 @@ exports[`Trade #useAllCommonPairs should get all pair combinations, wbnb, wbnb 1
         ],
         Array [
           Token {
-            "address": "0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf",
+            "address": "0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C",
             "chainId": 56,
             "decimals": 18,
             "name": "StealthPad Token",
             "projectLink": "https://stealthswap.trade/",
-            "symbol": "STEALTH",
+            "symbol": "SWAP",
           },
           Token {
             "address": "0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c",
@@ -1610,12 +1610,12 @@ exports[`Trade #useAllCommonPairs should get all pair combinations, wbnb, wbnb 1
         ],
         Array [
           Token {
-            "address": "0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf",
+            "address": "0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C",
             "chainId": 56,
             "decimals": 18,
             "name": "StealthPad Token",
             "projectLink": "https://stealthswap.trade/",
-            "symbol": "STEALTH",
+            "symbol": "SWAP",
           },
           Token {
             "address": "0x2170Ed0880ac9A755fd29B2688956BD959F933F8",
@@ -1628,12 +1628,12 @@ exports[`Trade #useAllCommonPairs should get all pair combinations, wbnb, wbnb 1
         ],
         Array [
           Token {
-            "address": "0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf",
+            "address": "0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C",
             "chainId": 56,
             "decimals": 18,
             "name": "StealthPad Token",
             "projectLink": "https://stealthswap.trade/",
-            "symbol": "STEALTH",
+            "symbol": "SWAP",
           },
           Token {
             "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
@@ -1672,12 +1672,12 @@ exports[`Trade #useAllCommonPairs should get all pair combinations, wbnb, wbnb 1
             "symbol": "BUSD",
           },
           Token {
-            "address": "0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf",
+            "address": "0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C",
             "chainId": 56,
             "decimals": 18,
             "name": "StealthPad Token",
             "projectLink": "https://stealthswap.trade/",
-            "symbol": "STEALTH",
+            "symbol": "SWAP",
           },
         ],
         Array [
@@ -1780,12 +1780,12 @@ exports[`Trade #useAllCommonPairs should get all pair combinations, wbnb, wbnb 1
             "symbol": "USDT",
           },
           Token {
-            "address": "0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf",
+            "address": "0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C",
             "chainId": 56,
             "decimals": 18,
             "name": "StealthPad Token",
             "projectLink": "https://stealthswap.trade/",
-            "symbol": "STEALTH",
+            "symbol": "SWAP",
           },
         ],
         Array [
@@ -1888,12 +1888,12 @@ exports[`Trade #useAllCommonPairs should get all pair combinations, wbnb, wbnb 1
             "symbol": "BTCB",
           },
           Token {
-            "address": "0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf",
+            "address": "0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C",
             "chainId": 56,
             "decimals": 18,
             "name": "StealthPad Token",
             "projectLink": "https://stealthswap.trade/",
-            "symbol": "STEALTH",
+            "symbol": "SWAP",
           },
         ],
         Array [
@@ -1996,12 +1996,12 @@ exports[`Trade #useAllCommonPairs should get all pair combinations, wbnb, wbnb 1
             "symbol": "ETH",
           },
           Token {
-            "address": "0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf",
+            "address": "0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C",
             "chainId": 56,
             "decimals": 18,
             "name": "StealthPad Token",
             "projectLink": "https://stealthswap.trade/",
-            "symbol": "STEALTH",
+            "symbol": "SWAP",
           },
         ],
         Array [
@@ -2104,12 +2104,12 @@ exports[`Trade #useAllCommonPairs should get all pair combinations, wbnb, wbnb 1
             "symbol": "USDC",
           },
           Token {
-            "address": "0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf",
+            "address": "0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C",
             "chainId": 56,
             "decimals": 18,
             "name": "StealthPad Token",
             "projectLink": "https://stealthswap.trade/",
-            "symbol": "STEALTH",
+            "symbol": "SWAP",
           },
         ],
         Array [
@@ -2200,17 +2200,17 @@ exports[`Trade #useAllCommonPairs should get all pair combinations, wbnb, wbnb 1
               "decimals": 18,
               "name": "Pancake LPs",
               "projectLink": undefined,
-              "symbol": "STEALTH-LP",
+              "symbol": "SWAP-LP",
             },
             "tokenAmounts": Array [
               TokenAmount {
                 "currency": Token {
-                  "address": "0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf",
+                  "address": "0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C",
                   "chainId": 56,
                   "decimals": 18,
                   "name": "StealthPad Token",
                   "projectLink": "https://stealthswap.trade/",
-                  "symbol": "STEALTH",
+                  "symbol": "SWAP",
                 },
                 "denominator": JSBI [
                   660865024,
@@ -2220,12 +2220,12 @@ exports[`Trade #useAllCommonPairs should get all pair combinations, wbnb, wbnb 1
                   1,
                 ],
                 "token": Token {
-                  "address": "0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf",
+                  "address": "0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C",
                   "chainId": 56,
                   "decimals": 18,
                   "name": "StealthPad Token",
                   "projectLink": "https://stealthswap.trade/",
-                  "symbol": "STEALTH",
+                  "symbol": "SWAP",
                 },
               },
               TokenAmount {
@@ -2265,17 +2265,17 @@ exports[`Trade #useAllCommonPairs should get all pair combinations, wbnb, wbnb 1
               "decimals": 18,
               "name": "Pancake LPs",
               "projectLink": undefined,
-              "symbol": "STEALTH-LP",
+              "symbol": "SWAP-LP",
             },
             "tokenAmounts": Array [
               TokenAmount {
                 "currency": Token {
-                  "address": "0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf",
+                  "address": "0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C",
                   "chainId": 56,
                   "decimals": 18,
                   "name": "StealthPad Token",
                   "projectLink": "https://stealthswap.trade/",
-                  "symbol": "STEALTH",
+                  "symbol": "SWAP",
                 },
                 "denominator": JSBI [
                   660865024,
@@ -2285,12 +2285,12 @@ exports[`Trade #useAllCommonPairs should get all pair combinations, wbnb, wbnb 1
                   1,
                 ],
                 "token": Token {
-                  "address": "0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf",
+                  "address": "0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C",
                   "chainId": 56,
                   "decimals": 18,
                   "name": "StealthPad Token",
                   "projectLink": "https://stealthswap.trade/",
-                  "symbol": "STEALTH",
+                  "symbol": "SWAP",
                 },
               },
               TokenAmount {
@@ -2330,17 +2330,17 @@ exports[`Trade #useAllCommonPairs should get all pair combinations, wbnb, wbnb 1
               "decimals": 18,
               "name": "Pancake LPs",
               "projectLink": undefined,
-              "symbol": "STEALTH-LP",
+              "symbol": "SWAP-LP",
             },
             "tokenAmounts": Array [
               TokenAmount {
                 "currency": Token {
-                  "address": "0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf",
+                  "address": "0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C",
                   "chainId": 56,
                   "decimals": 18,
                   "name": "StealthPad Token",
                   "projectLink": "https://stealthswap.trade/",
-                  "symbol": "STEALTH",
+                  "symbol": "SWAP",
                 },
                 "denominator": JSBI [
                   660865024,
@@ -2350,12 +2350,12 @@ exports[`Trade #useAllCommonPairs should get all pair combinations, wbnb, wbnb 1
                   1,
                 ],
                 "token": Token {
-                  "address": "0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf",
+                  "address": "0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C",
                   "chainId": 56,
                   "decimals": 18,
                   "name": "StealthPad Token",
                   "projectLink": "https://stealthswap.trade/",
-                  "symbol": "STEALTH",
+                  "symbol": "SWAP",
                 },
               },
               TokenAmount {

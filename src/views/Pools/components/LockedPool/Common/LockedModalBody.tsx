@@ -93,11 +93,11 @@ const LockedModalBody: React.FC<LockedModalBodyPropsType> = ({
       {cakeNeeded ? (
         hasEnoughBalanceToExtend ? (
           <Text fontSize="12px" mt="24px">
-            {t('0.0001 STEALTH will be spent to extend')}
+            {t('0.0001 SWAP will be spent to extend')}
           </Text>
         ) : (
           <Message variant="warning" mt="24px">
-            <MessageText maxWidth="200px">{t('0.0001 STEALTH required for enabling extension')}</MessageText>
+            <MessageText maxWidth="200px">{t('0.0001 SWAP required for enabling extension')}</MessageText>
           </Message>
         )
       ) : null}

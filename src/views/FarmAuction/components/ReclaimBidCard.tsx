@@ -69,11 +69,11 @@ const ReclaimBidCard: React.FC = () => {
           {t('Your bid in Auction #%auctionId% was unsuccessful.', { auctionId: reclaimableAuction.id })}
         </Text>
         <Text bold mb="16px">
-          {t('Reclaim your STEALTH now.')}
+          {t('Reclaim your SWAP now.')}
         </Text>
         <Flex justifyContent="space-between" mb="8px">
           <Text color="textSubtle">{t('Your total bid')}</Text>
-          <Text>{t('%num% STEALTH', { num: getBalanceNumber(amount).toLocaleString() })}</Text>
+          <Text>{t('%num% SWAP', { num: getBalanceNumber(amount).toLocaleString() })}</Text>
         </Flex>
         <Flex justifyContent="space-between" mb="24px">
           <Text color="textSubtle">{t('Your position')}</Text>

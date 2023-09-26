@@ -69,7 +69,7 @@ const LockedStakingApy: React.FC<LockedStakingApyProps> = ({
       <Flex justifyContent="space-between" mb="16px">
         <Box>
           <Text color="textSubtle" textTransform="uppercase" bold fontSize="12px">
-            {t('STEALTH locked')}
+            {t('SWAP locked')}
           </Text>
           <BalanceWithLoading color="text" bold fontSize="16px" value={currentLockedAmount} decimals={5} />
           <BalanceWithLoading
@@ -122,7 +122,7 @@ const LockedStakingApy: React.FC<LockedStakingApyProps> = ({
       )}
       <Flex alignItems="center" justifyContent="space-between">
         <Text color="textSubtle" textTransform="uppercase" bold fontSize="12px">
-          {t('Recent STEALTH profit')}
+          {t('Recent SWAP profit')}
         </Text>
         <BalanceWithLoading color="text" bold fontSize="16px" value={earningTokenBalance} decimals={5} />
       </Flex>

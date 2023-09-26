@@ -91,11 +91,11 @@ const DetailsView: React.FC<DetailsViewProps> = ({
                   'Your vCAKE boosting was expired at the snapshot block. Renew your fixed-term staking position to activate the boost for future voting proposals.',
                 )
               : t(
-                  'Voting power is calculated using the staking amount and remaining staking duration of the fixed-term STEALTH staking position at the block.',
+                  'Voting power is calculated using the staking amount and remaining staking duration of the fixed-term SWAP staking position at the block.',
                 )}
           </Text>
           <Text bold m="10px 0">
-            {`${t('STEALTH locked:')} ${formatNumber(lockedCakeBalance, 0, 2)}`}
+            {`${t('SWAP locked:')} ${formatNumber(lockedCakeBalance, 0, 2)}`}
           </Text>
           <StyleLink href="/pools">{t('Go to Pools')}</StyleLink>
         </Box>
@@ -110,7 +110,7 @@ const DetailsView: React.FC<DetailsViewProps> = ({
     <ModalInner mb="0">
       <Text as="p" mb="24px" fontSize="14px" color="textSubtle">
         {t(
-          'Your voting power is determined by the amount of STEALTH you held and the remaining duration on the fixed-term staking position (if you have one) at the block detailed below. STEALTH held in other places does not contribute to your voting power.',
+          'Your voting power is determined by the amount of SWAP you held and the remaining duration on the fixed-term staking position (if you have one) at the block detailed below. SWAP held in other places does not contribute to your voting power.',
         )}
       </Text>
       <Text color="secondary" textTransform="uppercase" mb="4px" bold fontSize="14px">
@@ -141,7 +141,7 @@ const DetailsView: React.FC<DetailsViewProps> = ({
       {Number.isFinite(cakeVaultBalance) && (
         <Flex alignItems="center" justifyContent="space-between" mb="4px">
           <Text color="textSubtle" fontSize="16px">
-            {t('Flexible STEALTH Staking')}
+            {t('Flexible SWAP Staking')}
           </Text>
           <Text textAlign="right">{formatNumber(cakeVaultBalance, 0, 3)}</Text>
         </Flex>
@@ -152,7 +152,7 @@ const DetailsView: React.FC<DetailsViewProps> = ({
             <Flex alignItems="center" justifyContent="space-between" mb="4px">
               <Flex>
                 <Text color="textSubtle" fontSize="16px">
-                  {t('Fixed Term STEALTH Staking')}
+                  {t('Fixed Term SWAP Staking')}
                 </Text>
                 {tooltipVisible && tooltip}
                 <Flex ref={targetRef}>
@@ -168,7 +168,7 @@ const DetailsView: React.FC<DetailsViewProps> = ({
               <FixedTermCardInner expired={isBoostingExpired}>
                 <Flex>
                   <Text color="textSubtle" fontSize="16px" mr="auto">
-                    {t('Fixed Term STEALTH Staking')}
+                    {t('Fixed Term SWAP Staking')}
                   </Text>
                   {tooltipVisible && tooltip}
                   <Flex ref={targetRef}>
@@ -210,7 +210,7 @@ const DetailsView: React.FC<DetailsViewProps> = ({
       {Number.isFinite(cakeBnbLpBalance) && (
         <Flex alignItems="center" justifyContent="space-between" mb="4px">
           <Text color="textSubtle" fontSize="16px">
-            {t('STEALTH ETH LP')}
+            {t('SWAP ETH LP')}
           </Text>
           <Text textAlign="right">{formatNumber(cakeBnbLpBalance, 0, 3)}</Text>
         </Flex>

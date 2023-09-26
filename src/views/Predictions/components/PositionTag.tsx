@@ -59,7 +59,7 @@ const PositionTag: React.FC<PositionTagProps> = ({ betPosition, children, ...pro
       </Text>
       <Text>
         {t(
-          'The Locked Price & Closed Price are exactly the same (within 8 decimals), so neither side wins. All funds entered into UP and DOWN positions will go to the weekly STEALTH burn.',
+          'The Locked Price & Closed Price are exactly the same (within 8 decimals), so neither side wins. All funds entered into UP and DOWN positions will go to the weekly SWAP burn.',
         )}
       </Text>
     </>,

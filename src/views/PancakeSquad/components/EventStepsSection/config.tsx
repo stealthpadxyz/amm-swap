@@ -50,17 +50,17 @@ const stepsConfigBuilder = ({ t, userInfos, eventInfos, userStatus, account, the
         hasProfileActivated,
         eventStatus: [SaleStatusEnum.Pending, SaleStatusEnum.Premint],
       }),
-      title: t('Hold STEALTH'),
-      bodyText: [t('Each NFT costs STEALTH to mint. Remember you also need ETH to cover transaction fees too!')],
+      title: t('Hold SWAP'),
+      bodyText: [t('Each NFT costs SWAP to mint. Remember you also need ETH to cover transaction fees too!')],
       buttons: (
         <>
           <Button
             as="a"
-            href="/swap?outputCurrency=0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf"
+            href="/swap?outputCurrency=0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C"
             target="_blank"
             width="100%"
           >
-            {t('Buy STEALTH')}
+            {t('Buy SWAP')}
           </Button>
         </>
       ),

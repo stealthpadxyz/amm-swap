@@ -1,7 +1,7 @@
 import { JSBI, Price, Token, Percent } from '@pancakeswap/sdk'
 import getRatePercentageDifference from './getRatePercentageDifference'
 
-const STEALTH = new Token(1, '0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf', 18, 'STEALTH', 'StealthPad Token')
+const SWAP = new Token(1, '0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C', 18, 'SWAP', 'StealthPad Token')
 const BUSD = new Token(1, '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56', 18, 'BUSD', 'Binance USD')
 const DOGE = new Token(1, '0xbA2aE424d960c26247Dd6c32edC70B295c744C43', 8, 'DOGE', 'Binance-Peg Dogecoin')
 
@@ -12,21 +12,21 @@ const FIFTEEN = JSBI.multiply(JSBI.BigInt(15), EIGHTEEN_DECIMALS)
 
 describe('limitOrders/utils/getRatePercentageDifference', () => {
   describe('18 decimal tokens', () => {
-    const marketPrice = new Price(STEALTH, BUSD, EIGHTEEN_DECIMALS, TEN) // 10 BUSD per 1 STEALTH
+    const marketPrice = new Price(SWAP, BUSD, EIGHTEEN_DECIMALS, TEN) // 10 BUSD per 1 SWAP
     it('returns correct positive percentage', () => {
-      const price = new Price(STEALTH, BUSD, EIGHTEEN_DECIMALS, FIFTEEN) // 15 BUSD per 1 STEALTH
+      const price = new Price(SWAP, BUSD, EIGHTEEN_DECIMALS, FIFTEEN) // 15 BUSD per 1 SWAP
       const rate = getRatePercentageDifference(marketPrice, price)
       const expectedRate = new Percent(50, 100)
       expect(expectedRate.equalTo(rate)).toBe(true)
     })
     it('returns correct negative percentage', () => {
-      const price = new Price(STEALTH, BUSD, EIGHTEEN_DECIMALS, FIVE) // 5 BUSD per 1 STEALTH
+      const price = new Price(SWAP, BUSD, EIGHTEEN_DECIMALS, FIVE) // 5 BUSD per 1 SWAP
       const rate = getRatePercentageDifference(marketPrice, price)
       const expectedRate = new Percent(-50, 100)
       expect(expectedRate.equalTo(rate)).toBe(true)
     })
     it('returns correct equal percentage', () => {
-      const price = new Price(STEALTH, BUSD, EIGHTEEN_DECIMALS, TEN) // 50 BUSD per 1 STEALTH
+      const price = new Price(SWAP, BUSD, EIGHTEEN_DECIMALS, TEN) // 50 BUSD per 1 SWAP
       const rate = getRatePercentageDifference(marketPrice, price)
       const expectedRate = new Percent(0, 100)
       expect(expectedRate.equalTo(rate)).toBe(true)

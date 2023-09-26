@@ -124,7 +124,7 @@ const Overview: React.FC<OverviewPropsType> = ({
         <Box mt="16px" maxWidth="370px">
           <Message variant="warning">
             <MessageText>
-              {t('You will be able to withdraw the staked STEALTH and profit only when the staking position is unlocked')}
+              {t('You will be able to withdraw the staked SWAP and profit only when the staking position is unlocked')}
             </MessageText>
           </Message>
         </Box>

@@ -60,33 +60,33 @@ const MaxTokenEntry = ({ maxToken, ifo, poolId }: { maxToken: number; ifo: Ifo; 
   const basicTooltipContent =
     ifo.version >= 3.1
       ? t(
-          'For the private sale, each eligible participant will be able to commit any amount of STEALTH up to the maximum commit limit, which is published along with the IFO voting proposal.',
+          'For the private sale, each eligible participant will be able to commit any amount of SWAP up to the maximum commit limit, which is published along with the IFO voting proposal.',
         )
       : t(
-          'For the basic sale, Max STEALTH entry is capped by minimum between your average STEALTH balance in the iCAKE, or the pool’s hard cap. To increase the max entry, Stake more STEALTH into the iCAKE',
+          'For the basic sale, Max SWAP entry is capped by minimum between your average SWAP balance in the iCAKE, or the pool’s hard cap. To increase the max entry, Stake more SWAP into the iCAKE',
         )
 
   const unlimitedToolipContent =
     ifo.version >= 3.1 ? (
       <Box>
-        <Text display="inline">{t('For the public sale, Max STEALTH entry is capped by')} </Text>
+        <Text display="inline">{t('For the public sale, Max SWAP entry is capped by')} </Text>
         <Text bold display="inline">
           {t('the number of iCAKE.')}{' '}
         </Text>
         <Text display="inline">
-          {t('Lock more STEALTH for longer durations to increase the maximum number of STEALTH you can commit to the sale.')}
+          {t('Lock more SWAP for longer durations to increase the maximum number of SWAP you can commit to the sale.')}
         </Text>
       </Box>
     ) : (
       t(
-        'For the unlimited sale, Max STEALTH entry is capped by your average STEALTH balance in the iCake. To increase the max entry, Stake more STEALTH into the iCake',
+        'For the unlimited sale, Max SWAP entry is capped by your average SWAP balance in the iCake. To increase the max entry, Stake more SWAP into the iCake',
       )
     )
 
   const tooltipContent = poolId === PoolIds.poolBasic ? basicTooltipContent : unlimitedToolipContent
 
   const { targetRef, tooltip, tooltipVisible } = useTooltip(tooltipContent, { placement: 'bottom-start' })
-  const label = isCurrencyCake ? t('Max. STEALTH entry') : t('Max. token entry')
+  const label = isCurrencyCake ? t('Max. SWAP entry') : t('Max. token entry')
   const price = useBUSDPrice(ifo.currency)
 
   const dollarValueOfToken = multiplyPriceByAmount(price, maxToken, ifo.currency.decimals)
@@ -177,7 +177,7 @@ const IfoCardDetails: React.FC<IfoCardDetailsProps> = ({ isEligible, poolId, ifo
         <>
           {tokenEntry}
           <FooterEntry label={t('Funds to raise:')} value={ifo[poolId].raiseAmount} />
-          {ifo[poolId].cakeToBurn !== '$0' && <FooterEntry label={t('STEALTH to burn:')} value={ifo[poolId].cakeToBurn} />}
+          {ifo[poolId].cakeToBurn !== '$0' && <FooterEntry label={t('SWAP to burn:')} value={ifo[poolId].cakeToBurn} />}
           <FooterEntry
             label={t('Price per %symbol%:', { symbol: ifo.token.symbol })}
             value={`$${ifo.tokenOfferingPrice}`}
@@ -238,7 +238,7 @@ const IfoCardDetails: React.FC<IfoCardDetailsProps> = ({ isEligible, poolId, ifo
           {poolId === PoolIds.poolUnlimited && <FooterEntry label={t('Additional fee:')} value={taxRate} />}
           <FooterEntry label={t('Total committed:')} value={currencyPriceInUSD.gt(0) ? totalCommitted : null} />
           <FooterEntry label={t('Funds to raise:')} value={ifo[poolId].raiseAmount} />
-          {ifo[poolId].cakeToBurn !== '$0' && <FooterEntry label={t('STEALTH to burn:')} value={ifo[poolId].cakeToBurn} />}
+          {ifo[poolId].cakeToBurn !== '$0' && <FooterEntry label={t('SWAP to burn:')} value={ifo[poolId].cakeToBurn} />}
           {ifo.version > 1 && (
             <FooterEntry
               label={t('Price per %symbol%:', { symbol: ifo.token.symbol })}

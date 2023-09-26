@@ -140,7 +140,7 @@ export const fetchFarmUserDataAsync = createAsyncThunk<
     if (state.farms.chainId !== chainId) {
       await dispatch(fetchInitialFarmsData({ chainId }))
     }
-    const config = chainId === ChainId.BSC ? farmsConfig : farmsTestConfig
+    const config = chainId !== ChainId.BSC ? farmsTestConfig : farmsConfig
 
     const poolLength = await fetchMasterChefFarmPoolLength(chainId)
     const farmsToFetch = config.filter((farmConfig) => pids.includes(farmConfig.pid))

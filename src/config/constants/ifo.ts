@@ -3,7 +3,7 @@ import { bscTokens } from './tokens'
 import { CAKE_BNB_LP_MAINNET } from './farms'
 import { Ifo } from './types'
 
-export const cakeBnbLpToken = new Token(ChainId.BSC, CAKE_BNB_LP_MAINNET, 18, 'STEALTH-ETH LP')
+export const cakeBnbLpToken = new Token(ChainId.BSC, CAKE_BNB_LP_MAINNET, 18, 'SWAP-ETH LP')
 
 const ifos: Ifo[] = [
   {
@@ -27,8 +27,7 @@ const ifos: Ifo[] = [
     token: bscTokens.peel,
     releaseBlockNumber: 19964276,
     campaignId: '511300000',
-    articleUrl:
-      'https://stealthswap.trade/voting/proposal/bafkreibomj5nilvyckdro7ztmm62syt55dcfnonxs63ji6hm2ijq35lru4',
+    articleUrl: 'https://stealthswap.trade/voting/proposal/bafkreibomj5nilvyckdro7ztmm62syt55dcfnonxs63ji6hm2ijq35lru4',
     tokenOfferingPrice: 0.04,
     version: 3.2,
     twitterUrl: 'https://twitter.com/MetaApesGame',
@@ -57,8 +56,7 @@ const ifos: Ifo[] = [
     token: bscTokens.trivia,
     releaseBlockNumber: 19273145,
     campaignId: '511200000',
-    articleUrl:
-      'https://stealthswap.trade/voting/proposal/bafkreihrc2d55vrowbn2oajzs77ffv73g4hzch2e7wulnuccmbwl5u4hvq',
+    articleUrl: 'https://stealthswap.trade/voting/proposal/bafkreihrc2d55vrowbn2oajzs77ffv73g4hzch2e7wulnuccmbwl5u4hvq',
     tokenOfferingPrice: 0.035,
     version: 3.2,
     telegramUrl: 'https://t.me/TriviansGlobal',

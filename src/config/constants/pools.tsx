@@ -15,7 +15,7 @@ export const DURATION_FACTOR = BigNumber.from('31536000')
 
 export const vaultPoolConfig = {
   [VaultKey.CakeVaultV1]: {
-    name: <Trans>Auto STEALTH</Trans>,
+    name: <Trans>Auto SWAP</Trans>,
     description: <Trans>Automatic restaking</Trans>,
     autoCompoundFrequency: 5000,
     gasLimit: 380000,
@@ -25,7 +25,7 @@ export const vaultPoolConfig = {
     },
   },
   [VaultKey.CakeVault]: {
-    name: <Trans>Stake STEALTH</Trans>,
+    name: <Trans>Stake SWAP</Trans>,
     description: <Trans>Stake, Earn – And more!</Trans>,
     autoCompoundFrequency: 5000,
     gasLimit: 500000,
@@ -35,7 +35,7 @@ export const vaultPoolConfig = {
     },
   },
   [VaultKey.CakeFlexibleSideVault]: {
-    name: <Trans>Flexible STEALTH</Trans>,
+    name: <Trans>Flexible SWAP</Trans>,
     description: <Trans>Flexible staking on the side.</Trans>,
     autoCompoundFrequency: 5000,
     gasLimit: 500000,
@@ -45,8 +45,8 @@ export const vaultPoolConfig = {
     },
   },
   [VaultKey.IfoPool]: {
-    name: 'IFO STEALTH',
-    description: <Trans>Stake STEALTH to participate in IFOs</Trans>,
+    name: 'IFO SWAP',
+    description: <Trans>Stake SWAP to participate in IFOs</Trans>,
     autoCompoundFrequency: 1,
     gasLimit: 500000,
     tokenImage: {
@@ -96,7 +96,6 @@ export const livePools: SerializedPoolConfig[] = [
 ]
 
 // known finished pools
-const finishedPools = [
-].map((p) => ({ ...p, isFinished: true }))
+const finishedPools = [].map((p) => ({ ...p, isFinished: true }))
 
 export default [...livePools, ...finishedPools]

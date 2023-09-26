@@ -39,11 +39,11 @@ const TotalStaked: React.FC<MultiplierProps> = ({ multiplier }) => {
     <>
       <Text>
         {t(
-          'The Multiplier represents the proportion of STEALTH rewards each farm receives, as a proportion of the STEALTH produced each block.',
+          'The Multiplier represents the proportion of SWAP rewards each farm receives, as a proportion of the SWAP produced each block.',
         )}
       </Text>
       <Text my="24px">
-        {t('For example, if a 1x farm received 1 STEALTH per block, a 40x farm would receive 40 STEALTH per block.')}
+        {t('For example, if a 1x farm received 1 SWAP per block, a 40x farm would receive 40 SWAP per block.')}
       </Text>
       <Text>{t('This amount is already included in all APR calculations for the farm.')}</Text>
     </>

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Language } from "../LangSelector/types";
 import { FooterLinkType } from "./types";
 import { TwitterIcon, TelegramIcon, RedditIcon, InstagramIcon, GithubIcon, DiscordIcon, MediumIcon } from "../Svg";
@@ -85,7 +86,7 @@ export const socials = [
   {
     label: "Telegram",
     icon: TelegramIcon,
-    href: "https://t.me/PunkSwapDEX"
+    href: "https://t.me/PunkSwapDEX",
   },
   // {
   //   label: "Reddit",

@@ -158,7 +158,6 @@ export const useMasterchef = (withSignerIfPossible = true) => {
   return useMemo(() => getMasterchefContract(providerOrSigner, chainId), [providerOrSigner, chainId])
 }
 
-
 export const useMasterchefV1 = () => {
   const { library } = useActiveWeb3React()
   return useMemo(() => getMasterchefV1Contract(library.getSigner()), [library])
@@ -253,7 +252,7 @@ export const usePredictionsContract = (address: string, tokenSymbol: string) => 
     if (address === getPredictionsV1Address()) {
       return getPredictionsV1Contract(library.getSigner())
     }
-    const getPredContract = tokenSymbol === 'STEALTH' ? getCakePredictionsContract : getPredictionsContract
+    const getPredContract = tokenSymbol === 'SWAP' ? getCakePredictionsContract : getPredictionsContract
 
     return getPredContract(address, library.getSigner())
   }, [library, address, tokenSymbol])
@@ -379,7 +378,7 @@ export function usePairContract(pairAddress?: string, withSignerIfPossible?: boo
 }
 
 export function useMulticallContract() {
-  const {chainId} = useActiveWeb3React()
+  const { chainId } = useActiveWeb3React()
   return useContract(getMulticallAddress(chainId), multiCallAbi, false)
 }
 

@@ -16,12 +16,12 @@ export const BASE_BSC_SCAN_URLS = {
 }
 
 // CAKE_PER_BLOCK details
-// 40 STEALTH is minted per block
-// 20 STEALTH per block is sent to Burn pool (A farm just for burning cake)
-// 10 STEALTH per block goes to STEALTH syrup pool
-// 9 STEALTH per block goes to Yield farms and lottery
+// 40 SWAP is minted per block
+// 20 SWAP per block is sent to Burn pool (A farm just for burning cake)
+// 10 SWAP per block goes to SWAP syrup pool
+// 9 SWAP per block goes to Yield farms and lottery
 // CAKE_PER_BLOCK in config/index.ts = 40 as we only change the amount sent to the burn pool which is effectively a farm.
-// STEALTH/Block in src/views/Home/components/CakeDataRow.tsx = 15 (40 - Amount sent to burn pool)
+// SWAP/Block in src/views/Home/components/CakeDataRow.tsx = 15 (40 - Amount sent to burn pool)
 export const CAKE_PER_BLOCK = 14
 export const BLOCKS_PER_YEAR = (60 / BSC_BLOCK_TIME) * 60 * 24 * 365 // 10512000
 export const CAKE_PER_YEAR = CAKE_PER_BLOCK * BLOCKS_PER_YEAR

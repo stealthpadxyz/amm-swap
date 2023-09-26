@@ -27,7 +27,7 @@ import { ContractMethodName } from 'utils/types'
 import { transactionErrorToUserReadableMessage } from 'utils/transactionErrorToUserReadableMessage'
 import { useLPApr } from 'state/swap/hooks'
 import { ROUTER_ADDRESS } from 'config/constants/exchange'
-import { STEALTH } from 'config/constants/tokens'
+import { SWAP } from 'config/constants/tokens'
 import { LightCard } from '../../components/Card'
 import { AutoColumn, ColumnCenter } from '../../components/Layout/Column'
 import CurrencyInputPanel from '../../components/CurrencyInputPanel'
@@ -74,7 +74,7 @@ export default function AddLiquidity() {
 
   const [zapMode] = useZapModeManager()
   const [temporarilyZapMode, setTemporarilyZapMode] = useState(true)
-  const [currencyIdA, currencyIdB] = router.query.currency || ['ETH', STEALTH[chainId]?.address]
+  const [currencyIdA, currencyIdB] = router.query.currency || ['ETH', SWAP[chainId]?.address]
   const [steps, setSteps] = useState(Steps.Choose)
 
   const dispatch = useAppDispatch()

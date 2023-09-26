@@ -5,7 +5,7 @@ import { PageMeta } from './types'
 export const DEFAULT_META: PageMeta = {
   title: 'StealthPad',
   description:
-    'The most popular AMM on ShibariumScan by user count! Earn STEALTH through yield farming or win it in the Lottery, then stake it in Syrup Pools to earn more tokens! Initial Farm Offerings (new token launch model pioneered by StealthPad), NFTs, and more, on a platform you can trust.',
+    'The most popular AMM on ShibariumScan by user count! Earn SWAP through yield farming or win it in the Lottery, then stake it in Syrup Pools to earn more tokens! Initial Farm Offerings (new token launch model pioneered by StealthPad), NFTs, and more, on a platform you can trust.',
   image: 'https://photos.pinksale.finance/file/pinksale-logo-upload/1692031719104-2dec68678d1490b2ef061f1e5258042d.png',
 }
 

@@ -74,7 +74,7 @@ const AuctionDetails: React.FC<AuctionDetailsProps> = ({ auction, connectedBidde
             <Text small color="textSubtle">
               {t('Your existing bid')}
             </Text>
-            <Text small>{getBalanceNumber(amount).toLocaleString()} STEALTH</Text>
+            <Text small>{getBalanceNumber(amount).toLocaleString()} SWAP</Text>
           </Flex>
           <Flex justifyContent="space-between" width="100%" pt="8px">
             <Text small color="textSubtle">
@@ -86,7 +86,7 @@ const AuctionDetails: React.FC<AuctionDetailsProps> = ({ auction, connectedBidde
             {t('Place bid')}
           </Button>
           <Text color="textSubtle" small>
-            {t('If your bid is unsuccessful, you’ll be able to reclaim your STEALTH after the auction.')}
+            {t('If your bid is unsuccessful, you’ll be able to reclaim your SWAP after the auction.')}
           </Text>
         </>
       )

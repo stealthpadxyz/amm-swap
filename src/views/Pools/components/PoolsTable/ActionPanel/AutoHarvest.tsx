@@ -52,7 +52,7 @@ const AutoHarvestAction: React.FunctionComponent<DeserializedPool> = ({
 
   const actionTitle = (
     <Text fontSize="12px" bold color="secondary" as="span" textTransform="uppercase">
-      {t('Recent STEALTH profit')}
+      {t('Recent SWAP profit')}
     </Text>
   )
 

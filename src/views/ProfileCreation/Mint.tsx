@@ -97,7 +97,7 @@ const Mint: React.FC = () => {
             {t('Choose wisely: you can only ever make one starter collectible!')}
           </Text>
           <Text as="p" mb="24px" color="textSubtle">
-            {t('Cost: %num% STEALTH', { num: formatUnits(MINT_COST) })}
+            {t('Cost: %num% SWAP', { num: formatUnits(MINT_COST) })}
           </Text>
           {starterNfts.map((nft) => {
             const handleChange = (value: string) => setSelectedBunnyId(value)
@@ -118,7 +118,7 @@ const Mint: React.FC = () => {
           })}
           {!hasMinimumCakeRequired && (
             <Text color="failure" mb="16px">
-              {t('A minimum of %num% STEALTH is required', { num: formatUnits(MINT_COST) })}
+              {t('A minimum of %num% SWAP is required', { num: formatUnits(MINT_COST) })}
             </Text>
           )}
           <ApproveConfirmButtons

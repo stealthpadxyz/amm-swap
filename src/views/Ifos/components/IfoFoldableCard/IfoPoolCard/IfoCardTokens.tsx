@@ -121,7 +121,7 @@ const IfoCardTokens: React.FC<IfoCardTokensProps> = ({
   const { t } = useTranslation()
   const { targetRef, tooltip, tooltipVisible } = useTooltip(
     t(
-      'Sorry, you didn’t contribute enough STEALTH to meet the minimum threshold. You didn’t buy anything in this sale, but you can still reclaim your STEALTH.',
+      'Sorry, you didn’t contribute enough SWAP to meet the minimum threshold. You didn’t buy anything in this sale, but you can still reclaim your SWAP.',
     ),
     { placement: 'bottom' },
   )
@@ -273,7 +273,7 @@ const IfoCardTokens: React.FC<IfoCardTokensProps> = ({
           {ifov31Msg || (
             <>
               <Text textAlign="center" fontSize="14px">
-                {t('To participate in the next IFO, lock some STEALTH in the fixed-term staking STEALTH pool!')}
+                {t('To participate in the next IFO, lock some SWAP in the fixed-term staking SWAP pool!')}
               </Text>
               <MessageTextLink href="/ifo#ifo-how-to" textAlign="center">
                 {t('How does it work?')} »

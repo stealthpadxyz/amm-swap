@@ -2,19 +2,19 @@ import { ChainId, Token, WETH } from '@pancakeswap/sdk'
 
 const STEALTH_ETH = new Token(
   ChainId.BSC,
-  '0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf',
+  '0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C',
   8,
-  'STEALTH',
-  'StealthPad Token',
+  'SWAP',
+  'StealthSwap',
   'https://stealthswap.trade/',
 )
 
 const STEALTH_BASE = new Token(
   ChainId.BASE,
-  '0x5CDF9FC2Bf11F3E6ef99344f3D13e58DdAc62Ec9',
+  '0x4B255d10d59EFe3eA1FcCfe2b0111e0993e1F6b6',
   8,
-  'STEALTH',
-  'StealthPad Token',
+  'SWAP',
+  'StealthSwap',
   'https://stealthswap.trade/',
 )
 
@@ -22,7 +22,7 @@ const STEALTH_MAIN = new Token(
   ChainId.STEALTH_TESTNET,
   '0x1Cd327b11467dF6766cf6FeaD879A15D7F869247',
   8,
-  'STEALTH',
+  'SWAP',
   'StealthPad Token',
   'https://stealthswap.trade/',
 )
@@ -87,7 +87,7 @@ export const USDC = {
   [ChainId.STEALTH_TESTNET]: USDT_MAIN,
 }
 
-export const STEALTH = {
+export const SWAP = {
   [ChainId.BSC]: STEALTH_ETH,
   [ChainId.BASE]: STEALTH_BASE,
   [ChainId.STEALTH_TESTNET]: STEALTH_MAIN,
@@ -111,6 +111,14 @@ export const bscTokens = {
     'https://www.binance.com/',
   ),
   cake: STEALTH_ETH,
+  stealth: new Token(
+    ChainId.BSC,
+    '0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf',
+    8,
+    'STEALTH',
+    'StealthPad',
+    'https://stealthswap.trade/',
+  ),
   gmi: new Token(ChainId.BSC, '0x93D8d25E3C9A847a5Da79F79ecaC89461FEcA846', 18, 'GMI', 'Gamifi', 'https://gamifi.gg/'),
   tlos: new Token(
     ChainId.BSC,

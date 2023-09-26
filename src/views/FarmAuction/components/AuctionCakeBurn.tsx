@@ -44,7 +44,7 @@ const AuctionCakeBurn: React.FC = () => {
     <Flex flexDirection={['column-reverse', null, 'row']}>
       <Flex flexDirection="column" flex="2" ref={observerRef}>
         {burnedCakeAmount !== 0 ? (
-          <Balance fontSize="64px" bold value={burnedCakeAmount} decimals={0} unit=" STEALTH" />
+          <Balance fontSize="64px" bold value={burnedCakeAmount} decimals={0} unit=" SWAP" />
         ) : (
           <Skeleton width="256px" height="64px" />
         )}
@@ -62,7 +62,7 @@ const AuctionCakeBurn: React.FC = () => {
           <Skeleton width="128px" />
         )}
       </Flex>
-      <Image width={350} height={320} src="/images/burnt-cake.png" alt={t('Burnt STEALTH')} />
+      <Image width={350} height={320} src="/images/burnt-cake.png" alt={t('Burnt SWAP')} />
     </Flex>
   )
 }

@@ -39,7 +39,7 @@ export interface Message {
 }
 
 const STRATEGIES = [
-  { name: 'cake', params: { symbol: 'STEALTH', address: bscTokens.cake.address, decimals: 18, max: 300 } },
+  { name: 'cake', params: { symbol: 'SWAP', address: bscTokens.cake.address, decimals: 18, max: 300 } },
 ]
 const NETWORK = '1'
 

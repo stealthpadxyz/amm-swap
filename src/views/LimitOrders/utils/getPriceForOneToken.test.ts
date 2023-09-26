@@ -1,7 +1,7 @@
 import { JSBI, Token, TokenAmount } from '@pancakeswap/sdk'
 import getPriceForOneToken from './getPriceForOneToken'
 
-const STEALTH = new Token(56, '0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf', 18, 'STEALTH', 'StealthPad Token')
+const SWAP = new Token(56, '0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C', 18, 'SWAP', 'StealthPad Token')
 const BUSD = new Token(56, '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56', 18, 'BUSD', 'Binance USD')
 const DOGE = new Token(56, '0xbA2aE424d960c26247Dd6c32edC70B295c744C43', 8, 'DOGE', 'Binance-Peg Dogecoin')
 
@@ -15,16 +15,16 @@ const FIVE_EIGHT_DEC = JSBI.multiply(JSBI.BigInt(5), EIGHT_DECIMALS)
 
 describe('limitOrders/utils/getPriceForOneToken', () => {
   describe.each([
-    [new TokenAmount(STEALTH, ONE), new TokenAmount(BUSD, ONE), '1'],
-    [new TokenAmount(STEALTH, FIVE), new TokenAmount(BUSD, FIVE), '1'],
-    [new TokenAmount(STEALTH, ONE), new TokenAmount(BUSD, FIVE), '5'],
-    [new TokenAmount(STEALTH, FIVE), new TokenAmount(BUSD, ONE), '0.2'],
+    [new TokenAmount(SWAP, ONE), new TokenAmount(BUSD, ONE), '1'],
+    [new TokenAmount(SWAP, FIVE), new TokenAmount(BUSD, FIVE), '1'],
+    [new TokenAmount(SWAP, ONE), new TokenAmount(BUSD, FIVE), '5'],
+    [new TokenAmount(SWAP, FIVE), new TokenAmount(BUSD, ONE), '0.2'],
     [new TokenAmount(DOGE, ONE_EIGHT_DEC), new TokenAmount(BUSD, ONE), '1'],
     [new TokenAmount(DOGE, FIVE_EIGHT_DEC), new TokenAmount(BUSD, FIVE), '1'],
     [new TokenAmount(DOGE, ONE_EIGHT_DEC), new TokenAmount(BUSD, FIVE), '5'],
     [new TokenAmount(DOGE, FIVE_EIGHT_DEC), new TokenAmount(BUSD, ONE), '0.2'],
-    [new TokenAmount(STEALTH, ZERO), new TokenAmount(BUSD, ONE), undefined],
-    [new TokenAmount(STEALTH, ONE), new TokenAmount(BUSD, ZERO), undefined],
+    [new TokenAmount(SWAP, ZERO), new TokenAmount(BUSD, ONE), undefined],
+    [new TokenAmount(SWAP, ONE), new TokenAmount(BUSD, ZERO), undefined],
   ])(`returns correct price`, (input, output, expected) => {
     it(`for ${input.toSignificant(6)} ${input.currency.symbol} -> ${output.toSignificant(6)} ${
       output.currency.symbol

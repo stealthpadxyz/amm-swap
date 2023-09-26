@@ -1,7 +1,7 @@
 {
   "short_name": "PancakeSwap",
   "name": "PancakeSwap",
-  "description": "Farm STEALTH with Pancake LP Tokens",
+  "description": "Farm SWAP with Stealth LP Tokens",
   "homepage_url": "https://stealthswap.trade",
   "start_url": ".",
   "display": "standalone",

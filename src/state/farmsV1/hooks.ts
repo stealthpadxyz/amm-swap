@@ -60,7 +60,7 @@ export const usePollFarmsV1WithUserData = () => {
 
 /**
  * Fetches the "core" farm data used globally
- * 251 = STEALTH-ETH LP
+ * 251 = SWAP-ETH LP
  * 252 = BUSD-ETH LP
  */
 export const usePollCoreFarmData = () => {

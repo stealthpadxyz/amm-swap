@@ -52,7 +52,7 @@ export const useApprovePool = (lpContract: Contract, sousId, earningTokenSymbol)
   return { handleApprove, pendingTx }
 }
 
-// Approve STEALTH auto pool
+// Approve SWAP auto pool
 export const useVaultApprove = (vaultKey: VaultKey, setLastUpdated: () => void) => {
   const vaultPoolContract = useVaultPoolContract(vaultKey)
   const { t } = useTranslation()
@@ -60,7 +60,7 @@ export const useVaultApprove = (vaultKey: VaultKey, setLastUpdated: () => void) 
   return useCakeApprove(
     setLastUpdated,
     vaultPoolContract?.address,
-    t('You can now stake in the %symbol% vault!', { symbol: 'STEALTH' }),
+    t('You can now stake in the %symbol% vault!', { symbol: 'SWAP' }),
   )
 }
 

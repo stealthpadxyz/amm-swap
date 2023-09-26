@@ -40,7 +40,7 @@ const MoboxUserPrizeGrid: React.FC<{ userTradingInformation?: UserTradingInforma
         <tr>
           <BoldTd>
             <Flex flexDirection="column">
-              <Text bold>{cakeReward.toFixed(4)} STEALTH</Text>
+              <Text bold>{cakeReward.toFixed(4)} SWAP</Text>
               <Text bold>{moboxReward.toFixed(4)} MBOX</Text>
               <UserPrizeGridDollar dollarValueOfTokensReward={dollarValueOfTokensReward} />
             </Flex>

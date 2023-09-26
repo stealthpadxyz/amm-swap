@@ -41,7 +41,7 @@ const lPoolAddresses = livePools.filter(({ sousId }) => sousId !== 0).map(({ ear
 export const useFetchPublicPoolsData = () => {
   const dispatch = useAppDispatch()
   const { chainId } = useActiveWeb3React()
-  const config = chainId === ChainId.BSC ? farmsConfig : farmsTestConfig
+  const config = chainId !== ChainId.BSC ? farmsTestConfig : farmsConfig
   const activeFarms = config
     .filter(
       ({ token, pid, quoteToken }) =>

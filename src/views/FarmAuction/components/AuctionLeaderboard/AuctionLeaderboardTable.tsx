@@ -146,7 +146,7 @@ const AuctionLeaderboardTable: React.FC<{ bidders: Bidder[]; noBidsText: string 
           pr={[null, null, '24px']}
           py="16px"
         >
-          {t('STEALTH bid')}
+          {t('SWAP bid')}
         </Text>
         <Box />
         {/* Rows */}

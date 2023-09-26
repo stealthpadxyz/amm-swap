@@ -335,7 +335,7 @@ export enum PredictionStatus {
 
 export enum PredictionSupportedSymbol {
   ETH = 'ETH',
-  STEALTH = 'STEALTH',
+  SWAP = 'SWAP',
 }
 
 export enum PredictionsChartView {

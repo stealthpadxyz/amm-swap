@@ -97,14 +97,14 @@ const BuyTicketsModal: React.FC<BuyTicketsModalProps> = ({
               <Text font-size="14px" color="textSubtle">
                 {t('Cost per Ticket')}
               </Text>
-              <Text font-size="14px">{formatBigNumber(pricePerTicket, 0)} STEALTH</Text>
+              <Text font-size="14px">{formatBigNumber(pricePerTicket, 0)} SWAP</Text>
             </Flex>
             <Flex mb="8px" justifyContent="space-between">
               <Text font-size="14px" color="textSubtle">
-                {t('Your STEALTH Balance')}
+                {t('Your SWAP Balance')}
               </Text>
               <Text font-size="14px" color={isCakeBalanceInsufficient ? 'failure' : 'text'}>
-                {formatBigNumber(cakeBalance, 3)} STEALTH
+                {formatBigNumber(cakeBalance, 3)} SWAP
               </Text>
             </Flex>
             <Flex
@@ -125,7 +125,7 @@ const BuyTicketsModal: React.FC<BuyTicketsModalProps> = ({
                 {t('Total Cost')}
               </Text>
               <Text font-size="14px" bold>
-                {formatBigNumber(totalCost, 0)} STEALTH
+                {formatBigNumber(totalCost, 0)} SWAP
               </Text>
             </Flex>
           </Box>

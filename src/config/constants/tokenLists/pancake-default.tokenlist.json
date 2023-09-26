@@ -16,7 +16,15 @@
       "name": "StealthPad",
       "symbol": "STEALTH",
       "decimals": 8,
-      "logoURI": "https://stealthswap.trade/images/logo-round.png"
+      "logoURI": "https://stealthswap.trade/images/tokens/0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf.png"
+    },
+    {
+      "chainId": 1,
+      "address": "0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C",
+      "name": "StealthSwap",
+      "symbol": "SWAP",
+      "decimals": 8,
+      "logoURI": "https://stealthswap.trade/images/8453/tokens/0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C.png"
     },
     {
       "chainId": 1,
@@ -400,7 +408,7 @@
       "name": "StealthPad",
       "symbol": "STEALTH",
       "decimals": 8,
-      "logoURI": "https://stealthswap.trade/images/logo-round.png"
+      "logoURI": "https://stealthswap.trade/images/8453/tokens/0x5CDF9FC2Bf11F3E6ef99344f3D13e58DdAc62Ec9.png"
     },
     {
       "name": "Dai Stablecoin",
@@ -440,7 +448,15 @@
       "name": "StealthPad",
       "symbol": "STEALTH",
       "decimals": 8,
-      "logoURI": "https://stealthswap.trade/images/logo-round.png"
+      "logoURI": "https://stealthswap.trade/images/8453/tokens/0x5CDF9FC2Bf11F3E6ef99344f3D13e58DdAc62Ec9.png"
+    },
+    {
+      "chainId": 8453,
+      "address": "0x4B255d10d59EFe3eA1FcCfe2b0111e0993e1F6b6",
+      "name": "StealthSwap",
+      "symbol": "SWAP",
+      "decimals": 8,
+      "logoURI": "https://stealthswap.trade/images/8453/tokens/0x4B255d10d59EFe3eA1FcCfe2b0111e0993e1F6b6.png"
     },
     {
       "chainId": 8453,

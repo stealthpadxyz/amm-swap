@@ -34,10 +34,10 @@ export enum Result {
 }
 
 export const transformBetResponse = (tokenSymbol) =>
-  tokenSymbol === 'STEALTH' ? transformBetResponseCAKE : transformBetResponseBNB
+  tokenSymbol === 'SWAP' ? transformBetResponseCAKE : transformBetResponseBNB
 
 export const transformUserResponse = (tokenSymbol) =>
-  tokenSymbol === 'STEALTH' ? transformUserResponseCAKE : transformUserResponseBNB
+  tokenSymbol === 'SWAP' ? transformUserResponseCAKE : transformUserResponseBNB
 
 export const getRoundResult = (bet: Bet, currentEpoch: number): Result => {
   const { round } = bet
@@ -106,7 +106,7 @@ export const getTotalWon = async (): Promise<{ totalWonBNB: number; totalWonCAKE
   ])
 
   const totalWonBNB = getTotalWonMarket(BNBMarket, 'ETH')
-  const totalWonCAKE = getTotalWonMarket(CAKEMarket, 'STEALTH')
+  const totalWonCAKE = getTotalWonMarket(CAKEMarket, 'SWAP')
 
   return { totalWonBNB, totalWonCAKE }
 }
@@ -146,7 +146,7 @@ export const getLedgerData = async (account: string, epochs: number[], address: 
     name: 'ledger',
     params: [epoch, account],
   }))
-  const response = await multicallv2<PredictionsLedgerResponse[]>({abi: predictionsAbi, calls: ledgerCalls})
+  const response = await multicallv2<PredictionsLedgerResponse[]>({ abi: predictionsAbi, calls: ledgerCalls })
   return response
 }
 
@@ -229,7 +229,10 @@ export const getClaimStatuses = async (
     name: 'claimable',
     params: [epoch, account],
   }))
-  const claimableResponses = await multicallv2<[PredictionsClaimableResponse][]>({abi: predictionsAbi, calls: claimableCalls})
+  const claimableResponses = await multicallv2<[PredictionsClaimableResponse][]>({
+    abi: predictionsAbi,
+    calls: claimableCalls,
+  })
 
   return claimableResponses.reduce((accum, claimableResponse, index) => {
     const epoch = epochs[index]
@@ -248,7 +251,10 @@ export const getPredictionData = async (address: string): Promise<MarketData> =>
     address,
     name: method,
   }))
-  const [[currentEpoch], [intervalSeconds], [minBetAmount], [paused]] = await multicallv2({abi: predictionsAbi, calls: staticCalls})
+  const [[currentEpoch], [intervalSeconds], [minBetAmount], [paused]] = await multicallv2({
+    abi: predictionsAbi,
+    calls: staticCalls,
+  })
 
   return {
     status: paused ? PredictionStatus.PAUSED : PredictionStatus.LIVE,
@@ -264,7 +270,7 @@ export const getRoundsData = async (epochs: number[], address: string): Promise<
     name: 'rounds',
     params: [epoch],
   }))
-  const response = await multicallv2<PredictionsRoundsResponse[]>({abi: predictionsAbi, calls})
+  const response = await multicallv2<PredictionsRoundsResponse[]>({ abi: predictionsAbi, calls })
   return response
 }
 

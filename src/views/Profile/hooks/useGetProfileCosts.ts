@@ -26,7 +26,7 @@ const useGetProfileCosts = () => {
         }))
         const [[numberCakeToReactivate], [numberCakeToRegister], [numberCakeToUpdate]] = await multicallv2<
           [[BigNumber], [BigNumber], [BigNumber]]
-        >({abi: profileABI, calls})
+        >({ abi: profileABI, calls })
 
         setCosts({
           numberCakeToReactivate,
@@ -35,7 +35,7 @@ const useGetProfileCosts = () => {
         })
         setIsLoading(false)
       } catch (error) {
-        toastError(t('Error'), t('Could not retrieve STEALTH costs for profile'))
+        toastError(t('Error'), t('Could not retrieve SWAP costs for profile'))
       }
     }
 

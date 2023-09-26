@@ -38,7 +38,7 @@ import FlexRow from '../FlexRow'
 
 const LOGOS = {
   ETH: BinanceIcon,
-  STEALTH: LogoIcon,
+  SWAP: LogoIcon,
 }
 
 interface SetPositionCardProps {
@@ -78,7 +78,7 @@ const getValueAsEthersBn = (value: string) => {
 
 const TOKEN_BALANCE_CONFIG = {
   ETH: useGetBnbBalance,
-  STEALTH: useGetCakeBalance,
+  SWAP: useGetCakeBalance,
 }
 
 const SetPositionCard: React.FC<SetPositionCardProps> = ({ position, togglePosition, epoch, onBack, onSuccess }) => {
@@ -97,7 +97,7 @@ const SetPositionCard: React.FC<SetPositionCardProps> = ({ position, togglePosit
     return TOKEN_BALANCE_CONFIG[token.symbol]
   }, [token.symbol])
 
-  const { isVaultApproved, setLastUpdated } = useCakeApprovalStatus(token.symbol === 'STEALTH' ? predictionsAddress : null)
+  const { isVaultApproved, setLastUpdated } = useCakeApprovalStatus(token.symbol === 'SWAP' ? predictionsAddress : null)
   const { handleApprove, pendingTx } = useCakeApprove(
     setLastUpdated,
     predictionsAddress,
@@ -162,14 +162,14 @@ const SetPositionCard: React.FC<SetPositionCardProps> = ({ position, togglePosit
   const handleEnterPosition = async () => {
     const betMethod = position === BetPosition.BULL ? 'betBull' : 'betBear'
     const callOptions =
-      token.symbol === 'STEALTH'
+      token.symbol === 'SWAP'
         ? {
             gasLimit: 300000,
             value: 0,
           }
         : { value: valueAsBn.toString() }
 
-    const args = token.symbol === 'STEALTH' ? [epoch, valueAsBn.toString()] : [epoch]
+    const args = token.symbol === 'SWAP' ? [epoch, valueAsBn.toString()] : [epoch]
 
     const receipt = await fetchWithCatchTxError(() => {
       return callWithGasPrice(predictionsContract, betMethod, args, callOptions)

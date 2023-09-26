@@ -24,7 +24,7 @@ export const footerLinks: (t: ContextApi['t']) => FooterLinkType[] = (t) => [
   //       href: 'https://docs.punkswap.exchange/brand',
   //     },
   //     {
-  //       label: t('STEALTH Emission Projection'),
+  //       label: t('SWAP Emission Projection'),
   //       href: 'https://docs.punkswap.exchange/brand',
   //     },
   //     // {

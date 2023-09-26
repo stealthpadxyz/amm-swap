@@ -29,7 +29,7 @@ import {
 
 export const usePollFarmsWithUserData = () => {
   const dispatch = useAppDispatch()
-  const { account, chainId } = useWeb3React()
+  const { account, chainId } = useActiveWeb3React()
   const config = chainId !== ChainId.BSC ? farmsTestConfig : farmsConfig
 
   useSWRImmutable(
@@ -57,12 +57,12 @@ export const usePollFarmsWithUserData = () => {
 
 /**
  * Fetches the "core" farm data used globally
- * 2 = STEALTH-ETH LP
+ * 2 = SWAP-ETH LP
  * 3 = BUSD-ETH LP
  */
 const coreFarmPIDs = {
   1: [2, 3],
-  917: [2, 3],
+  8453: [2, 3],
 }
 
 export const usePollCoreFarmData = () => {

@@ -111,8 +111,8 @@ export const bscTest: Chain = {
     symbol: 'ETH',
   },
   rpcUrls: {
-    default: 'https://nd-139-982-975.p2pify.com/dec4de6f582a0e1f28ba06fc6e2b2449',
-    public: 'https://nd-139-982-975.p2pify.com/dec4de6f582a0e1f28ba06fc6e2b2449',
+    default: 'https://mainnet.base.org/',
+    public: 'https://mainnet.base.org/',
   },
   blockExplorers: {
     default: { name: 'BaseScan', url: 'https://basescan.org/' },

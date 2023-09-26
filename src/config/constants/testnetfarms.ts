@@ -4,7 +4,7 @@ import { SerializedFarmConfig } from './types'
 
 const serializedTokens = serializeTokens(bscTestnetTokens)
 // const { chainId } = useActiveWeb3React()`
-export const CAKE_BNB_LP_MAINNET = '0x867E3bDE595F9632cBfe03Cd1CDA15AfE9F1c2ca'
+export const CAKE_BNB_LP_MAINNET = '0x3BE5400ef8A8Ff9Ba85B158C0083599B5B8B21f3'
 
 const farms: SerializedFarmConfig[] = [
   /**
@@ -12,7 +12,7 @@ const farms: SerializedFarmConfig[] = [
    */
   {
     pid: 0,
-    lpSymbol: 'STEALTH',
+    lpSymbol: 'SWAP',
     lpAddresses: {
       8453: CAKE_BNB_LP_MAINNET,
       1: '',
@@ -25,10 +25,10 @@ const farms: SerializedFarmConfig[] = [
   },
   {
     pid: 1,
-    lpSymbol: 'STEALTH-ETH LP',
+    lpSymbol: 'SWAP-ETH LP',
     lpAddresses: {
-      8453: '',
-      1: CAKE_BNB_LP_MAINNET,
+      8453: CAKE_BNB_LP_MAINNET,
+      1: '',
       5: '',
     },
     token: serializedTokens.cake,
@@ -36,9 +36,9 @@ const farms: SerializedFarmConfig[] = [
   },
   {
     pid: 2,
-    lpSymbol: 'STEALTH-USDbC LP',
+    lpSymbol: 'SWAP-USDbC LP',
     lpAddresses: {
-      8453: '0xa779c0a79AF31B469e2107D9EC848E541899247a',
+      8453: '0x9e979f5f148B3Ce4C325d2d7413a4e4433d280Eb',
       1: '',
       5: '',
     },

@@ -17,9 +17,7 @@ export const swapSectionData = (t: TranslateFunction): SalesSectionProps => ({
   },
   images: {
     path: '/images/home/trade/',
-    attributes: [
-      { src: 'trade', alt: t('Trade') }
-    ],
+    attributes: [{ src: 'trade', alt: t('Trade') }],
   },
 })
 
@@ -39,21 +37,19 @@ export const earnSectionData = (t: TranslateFunction): SalesSectionProps => ({
   },
   images: {
     path: '/images/home/earn/',
-    attributes: [
-      { src: 'farms', alt: t('EARN') }
-    ],
+    attributes: [{ src: 'farms', alt: t('EARN') }],
   },
 })
 
 export const cakeSectionData = (t: TranslateFunction): SalesSectionProps => ({
-  headingText: t('STEALTH makes our world go round.'),
+  headingText: t('SWAP makes our world go round.'),
   bodyText: t(
-    'STEALTH token is at the heart of the StealthPad ecosystem. Buy it, win it, farm it, spend it, stake it... heck, you can even vote with it!',
+    'SWAP token is at the heart of the StealthPad ecosystem. Buy it, win it, farm it, spend it, stake it... heck, you can even vote with it!',
   ),
   reverse: false,
   primaryButton: {
-    to: '/swap?outputCurrency=0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf',
-    text: t('Buy STEALTH'),
+    to: '/swap?outputCurrency=0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C',
+    text: t('Buy SWAP'),
     external: false,
   },
   secondaryButton: {
@@ -64,8 +60,6 @@ export const cakeSectionData = (t: TranslateFunction): SalesSectionProps => ({
 
   images: {
     path: '/images/home/cake/',
-    attributes: [
-      { src: 'oreocoin', alt: t('STEALTH') },
-    ],
+    attributes: [{ src: 'oreocoin', alt: t('SWAP') }],
   },
 })

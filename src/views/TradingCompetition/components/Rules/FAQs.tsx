@@ -35,7 +35,7 @@ const FAQ = () => {
           <FoldableText title={t('Eligible trading pairs')} mt="24px">
             <Text fontSize="14px" color="textSubtle">
               {t(
-                'Only trades on DAR/ETH, STEALTH/ETH, and STEALTH/BUSD pairs will be included in volume calculations. Please note that the volume from limit orders will not be included.',
+                'Only trades on DAR/ETH, SWAP/ETH, and SWAP/BUSD pairs will be included in volume calculations. Please note that the volume from limit orders will not be included.',
               )}
             </Text>
           </FoldableText>
@@ -57,13 +57,13 @@ const FAQ = () => {
             <Text fontSize="14px" color="textSubtle">
               -{' '}
               {t(
-                'Prizes to be distributed in STEALTH and DAR in a distribution of 1:5 and shared by all members of each respective tier.',
+                'Prizes to be distributed in SWAP and DAR in a distribution of 1:5 and shared by all members of each respective tier.',
               )}
             </Text>
             <Text fontSize="14px" color="textSubtle">
               -{' '}
               {t(
-                'The price of token prizes ($STEALTH and $DAR) in USD will be determined as per their BUSD pair price during the tally period.',
+                'The price of token prizes ($SWAP and $DAR) in USD will be determined as per their BUSD pair price during the tally period.',
               )}
             </Text>
             <Text fontSize="14px" color="textSubtle">

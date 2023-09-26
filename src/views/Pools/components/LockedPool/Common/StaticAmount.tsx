@@ -15,7 +15,7 @@ const StaticAmount: React.FC<StaticAmountPropsType> = ({
   return (
     <>
       <Text color="textSubtle" textTransform="uppercase" bold fontSize="12px">
-        {t('Add STEALTH to lock')}
+        {t('Add SWAP to lock')}
       </Text>
       <Flex alignItems="center" justifyContent="space-between" mb="16px">
         <Box>

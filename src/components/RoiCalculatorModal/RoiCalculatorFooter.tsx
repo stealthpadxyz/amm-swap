@@ -60,11 +60,11 @@ const RoiCalculatorFooter: React.FC<RoiCalculatorFooterProps> = ({
     <>
       <Text>
         {t(
-          'The Multiplier represents the proportion of STEALTH rewards each farm receives, as a proportion of the STEALTH produced each block.',
+          'The Multiplier represents the proportion of SWAP rewards each farm receives, as a proportion of the SWAP produced each block.',
         )}
       </Text>
       <Text my="24px">
-        {t('For example, if a 1x farm received 1 STEALTH per block, a 40x farm would receive 40 STEALTH per block.')}
+        {t('For example, if a 1x farm received 1 SWAP per block, a 40x farm would receive 40 SWAP per block.')}
       </Text>
       <Text>{t('This amount is already included in all APR calculations for the farm.')}</Text>
     </>,
@@ -94,7 +94,7 @@ const RoiCalculatorFooter: React.FC<RoiCalculatorFooterProps> = ({
             )}
             {!Number.isFinite(apy) ? (
               <Text color="textSubtle" small>
-                *{isFarm ? t('Base APR (STEALTH yield only)') : t('APR')}
+                *{isFarm ? t('Base APR (SWAP yield only)') : t('APR')}
               </Text>
             ) : (
               <Text color="textSubtle" small>

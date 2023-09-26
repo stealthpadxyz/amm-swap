@@ -1,6 +1,6 @@
 import { Box, Button, Flex, InjectedModalProps, LinkExternal, Message, Skeleton, Text } from '@pancakeswap/uikit'
 import { useWeb3React } from '@web3-react/core'
-import { STEALTH } from 'config/constants/tokens'
+import { SWAP } from 'config/constants/tokens'
 import { FetchStatus } from 'config/constants/types'
 import { useTranslation } from 'contexts/Localization'
 import useAuth from 'hooks/useAuth'
@@ -19,7 +19,7 @@ const WalletInfo: React.FC<WalletInfoProps> = ({ hasLowBnbBalance, onDismiss }) 
   const { t } = useTranslation()
   const { account, chainId } = useWeb3React()
   const { balance, fetchStatus } = useGetBnbBalance()
-  const { balance: cakeBalance, fetchStatus: cakeFetchStatus } = useTokenBalance(STEALTH[chainId]?.address)
+  const { balance: cakeBalance, fetchStatus: cakeFetchStatus } = useTokenBalance(SWAP[chainId]?.address)
   const { logout } = useAuth()
 
   const handleLogout = () => {
@@ -50,7 +50,7 @@ const WalletInfo: React.FC<WalletInfoProps> = ({ hasLowBnbBalance, onDismiss }) 
         )}
       </Flex>
       <Flex alignItems="center" justifyContent="space-between" mb="24px">
-        <Text color="textSubtle">{t('STEALTH Balance')}</Text>
+        <Text color="textSubtle">{t('SWAP Balance')}</Text>
         {cakeFetchStatus !== FetchStatus.Fetched ? (
           <Skeleton height="22px" width="60px" />
         ) : (

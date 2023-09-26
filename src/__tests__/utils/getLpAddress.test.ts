@@ -1,7 +1,7 @@
 import { Token, ChainId } from '@pancakeswap/sdk'
 import getLpAddress from 'utils/getLpAddress'
 
-const CAKE_AS_STRING = '0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf'
+const CAKE_AS_STRING = '0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C'
 const BUSD_AS_STRING = '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56'
 const CAKE_AS_TOKEN = new Token(ChainId.BSC, CAKE_AS_STRING, 18)
 const BUSD_AS_TOKEN = new Token(ChainId.BSC, BUSD_AS_STRING, 18)

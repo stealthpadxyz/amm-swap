@@ -91,7 +91,7 @@ const MenuItem: React.FC<FooterProps> = ({
             </Box>
             <Button
               as="a"
-              href="/swap?outputCurrency=0xB18F98822C22492Bd6b77D19cae9367f3D60fcBf"
+              href="/swap?outputCurrency=0x7C9FA4433E491cEb656E8Ad4ffA5E1D601860E0C"
               target="_blank"
               scale="sm"
               color="#262626"
